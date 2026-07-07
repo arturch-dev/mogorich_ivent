@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="uk" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Організація Дня поля під ключ | Могорич Кейтеринг</title>
+    
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', 'YOUR_PIXEL_ID'); // ВСТАВТЕ ВАШ ID ПІКСЕЛЯ
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"/></noscript>
+    <!-- End Meta Pixel Code -->
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Intl-Tel-Input CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/css/intlTelInput.css">
+    
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#261815',
+                        dark80: 'rgba(38, 24, 21, 0.8)',
+                        accent: '#F2C364',
+                        bgWhite: '#FFFFFF',
+                        bgGray: '#F9F9F9'
+                    },
+                    fontFamily: {
+                        oswald: ['Oswald', 'sans-serif'],
+                        roboto: ['Roboto', 'sans-serif'],
+                    },
+                    borderRadius: {
+                        '40': '40px',
+                        '60': '60px',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS -->
+    <style>
+        body { background-color: #FFFFFF; color: #261815; font-family: 'Roboto', sans-serif; }
+        h1, h2, h3, .font-oswald { font-family: 'Oswald', sans-serif; }
+        
+        /* Swiper custom styles */
+        .swiper-slide { height: auto; }
+        .process-slider .swiper-slide { width: 85%; max-width: 400px; }
+        @media(min-width: 768px) { .process-slider .swiper-slide { width: 45%; max-width: none; } }
+        @media(min-width: 1024px) { .process-slider .swiper-slide { width: 30%; max-width: none; } }
+        
+        /* Accordion transition */
+        .accordion-content { transition: max-height 0.4s ease-in-out, padding 0.4s ease-in-out; max-height: 0; overflow: hidden; }
+        .accordion-content.active { max-height: 1000px; }
+        .accordion-icon { transition: transform 0.3s ease; }
+        .accordion-icon.active { transform: rotate(180deg); }
+
+        /* Iti input fix */
+        .iti { width: 100%; }
+        .iti__flag-container { border-radius: 12px 0 0 12px; }
+        
+        /* Smooth scrolling padding for fixed nav */
+        html { scroll-padding-top: 100px; }
+    </style>
+</head>
+<body class="antialiased flex flex-col gap-y-[90px] md:gap-y-[180px] pb-[90px]">
+
+    <!-- Sticky Header -->
+    <header class="fixed top-5 left-0 right-0 z-40 px-4 md:px-8">
+        <div class="max-w-7xl mx-auto bg-white/90 backdrop-blur-md shadow-sm border border-gray-100 rounded-60 px-6 py-4 flex items-center justify-between">
+            <a href="#hero" class="flex-shrink-0">
+                <!-- ВСТАВТЕ ВАШ ЛОГОТИП СЮДИ -->
+                <img src="https://via.placeholder.com/150x40?text=LOGO" alt="Могорич" class="h-10">
+            </a>
+            
+            <nav class="hidden lg:flex items-center gap-6 font-roboto text-[16px] text-dark font-medium">
+                <a href="#hero" class="hover:text-accent transition">Головна</a>
+                <a href="#risks" class="hover:text-accent transition">Проблеми та рішення</a>
+                <a href="#packages" class="hover:text-accent transition">Пакети послуг</a>
+                <a href="#why-us" class="hover:text-accent transition">Чому ми?</a>
+                <a href="#process" class="hover:text-accent transition">Процес</a>
+                <a href="#cases" class="hover:text-accent transition">Наші кейси</a>
+            </nav>
+
+            <button onclick="openModal()" class="bg-dark text-white font-oswald text-[16px] uppercase px-6 py-3 rounded-60 hover:bg-accent hover:text-dark transition hidden md:block">
+                Залишити заявку
+            </button>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="lg:hidden text-dark" id="mobileMenuBtn">
+                <i data-lucide="menu" class="w-8 h-8"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobileMenu" class="fixed inset-0 bg-dark/95 z-50 flex-col items-center justify-center gap-8 hidden text-white font-oswald text-2xl">
+        <button id="closeMobileMenu" class="absolute top-8 right-8"><i data-lucide="x" class="w-10 h-10"></i></button>
+        <a href="#hero" class="mobile-link">Головна</a>
+        <a href="#risks" class="mobile-link">Проблеми та рішення</a>
+        <a href="#packages" class="mobile-link">Пакети послуг</a>
+        <a href="#why-us" class="mobile-link">Чому ми?</a>
+        <a href="#process" class="mobile-link">Процес</a>
+        <a href="#cases" class="mobile-link">Наші кейси</a>
+        <button onclick="openModal(); document.getElementById('mobileMenu').classList.add('hidden');" class="bg-accent text-dark px-8 py-4 rounded-60 mt-4">Залишити заявку</button>
+    </div>
+
+    <!-- 1. Hero Section -->
+    <section id="hero" class="pt-[140px] px-4 md:px-8">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+                <h1 class="text-[40px] md:text-[60px] leading-[1.1] text-dark mb-6">Організація Дня поля під ключ по всій Україні</h1>
+                <p class="text-[16px] md:text-[18px] text-dark80 mb-8 max-w-lg">Облаштуємо локацію, організуємо реєстрацію гостей, харчування, технічний супровід, персонал та повний сервіс для агроподії.</p>
+                
+                <ul class="space-y-4 mb-8">
+                    <li class="flex items-center gap-3 text-[16px] md:text-[18px] text-dark font-medium"><i data-lucide="check-circle-2" class="text-accent w-6 h-6"></i> 1000+ проведених Днів поля</li>
+                    <li class="flex items-center gap-3 text-[16px] md:text-[18px] text-dark font-medium"><i data-lucide="check-circle-2" class="text-accent w-6 h-6"></i> 100+ агрокомпаній серед клієнтів</li>
+                    <li class="flex items-center gap-3 text-[16px] md:text-[18px] text-dark font-medium"><i data-lucide="check-circle-2" class="text-accent w-6 h-6"></i> від ТЗ до демонтажу локації</li>
+                </ul>
+
+                <button onclick="openModal()" class="bg-accent text-dark font-oswald text-[18px] uppercase px-8 py-5 rounded-60 hover:scale-105 transition shadow-lg flex items-center justify-center gap-3 w-full sm:w-auto">
+                    <!-- Іконка колоска (замінити src) -->
+                    <img src="https://img.icons8.com/ios-filled/50/261815/wheat.png" class="w-6 h-6" alt="колосок">
+                    Отримати прорахунок
+                </button>
+                <p class="mt-4 text-[14px] text-dark80">🎁 Бонус: залишай заявку зараз і гарантовано отримай безкоштовну сервіровку на ваш банкет</p>
+            </div>
+            <div class="relative">
+                <!-- ВСТАВТЕ ГОЛОВНЕ ФОТО СЮДИ -->
+                <img src="https://images.unsplash.com/photo-1595844730298-b960fa25e369?auto=format&fit=crop&w=800&q=80" alt="Агро подія" class="rounded-40 object-cover w-full h-[500px] shadow-xl">
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Risks -->
+    <section id="risks" class="px-4 md:px-8 bg-bgGray py-20 rounded-40 mx-4 md:mx-8">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-[30px] md:text-[40px] text-dark mb-6 max-w-3xl">Польова подія має десятки ризиків, які не видно на старті</h2>
+            <p class="text-[16px] md:text-[18px] text-dark80 mb-12 max-w-3xl">Організувати День поля складніше, ніж звичайний корпоратив чи банкет. Часто локація знаходиться за містом, без готової інфраструктури, з обмеженим доступом до електрики, води, меблів, техніки та комфортної зони для гостей.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Card -->
+                <div class="bg-white p-8 rounded-40 shadow-sm border border-gray-100">
+                    <h3 class="text-[24px] md:text-[30px] text-dark mb-3">Погода</h3>
+                    <p class="text-[16px] text-dark80">Спека, дощ, вітер, пил, відсутність тіні.</p>
+                </div>
+                <div class="bg-white p-8 rounded-40 shadow-sm border border-gray-100">
+                    <h3 class="text-[24px] md:text-[30px] text-dark mb-3">Локація без інфраструктури</h3>
+                    <p class="text-[16px] text-dark80">Немає води, електрики, зручних зон для гостей.</p>
+                </div>
+                <div class="bg-white p-8 rounded-40 shadow-sm border border-gray-100">
+                    <h3 class="text-[24px] md:text-[30px] text-dark mb-3">Багато підрядників</h3>
+                    <p class="text-[16px] text-dark80">Окремо шатри, окремо їжа, окремо звук, окремо меблі, окремо реєстрація.</p>
+                </div>
+                <div class="bg-white p-8 rounded-40 shadow-sm border border-gray-100">
+                    <h3 class="text-[24px] md:text-[30px] text-dark mb-3">Ризик зірвати враження</h3>
+                    <p class="text-[16px] text-dark80">Гості можуть приїхати, але замість презентації запам’ятати черги, хаос і погане харчування.</p>
+                </div>
+                <div class="bg-white p-8 rounded-40 shadow-sm border border-gray-100">
+                    <h3 class="text-[24px] md:text-[30px] text-dark mb-3">Складний контроль бюджету</h3>
+                    <p class="text-[16px] text-dark80">Багато дрібних витрат, прихованих доплат і неузгоджених позицій.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. One Contractor & 4. Infrastructure -->
+    <section class="px-4 md:px-8">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-[30px] md:text-[40px] text-dark mb-6 text-center">Повна інфраструктура для агроподії</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+                <div class="bg-bgGray p-8 rounded-40">
+                    <h3 class="text-[24px] md:text-[30px] text-dark mb-3">Зона реєстрації</h3>
+                    <p class="text-[16px] text-dark80">Стійка реєстрації, персонал, електронна реєстрація, навігація, видача матеріалів, контроль потоку.</p>
+                </div>
+                <div class="bg-bgGray p-8 rounded-40">
+                    <h3 class="text-[24px] md:text-[30px] text-dark mb-3">Презентаційна зона</h3>
+                    <p class="text-[16px] text-dark80">Сцена, звук, світло, екран або проєктор, мікрофони, місця для гостей, технічний супровід.</p>
+                </div>
+                <div class="bg-bgGray p-8 rounded-40 border-2 border-accent">
+                    <h3 class="text-[24px] md:text-[30px] text-dark mb-3">Кейтеринг-зона</h3>
+                    <p class="text-[16px] text-dark80">Welcome-coffee, комплексний обід, фуршет, банкет, food-box, напої, персонал, сервірування.</p>
+                </div>
+                <div class="bg-bgGray p-8 rounded-40">
+                    <h3 class="text-[24px] md:text-[30px] text-dark mb-3">Зона відпочинку</h3>
+                    <p class="text-[16px] text-dark80">Шатри, парасолі, столи, стільці, барні столи, текстиль, декор.</p>
+                </div>
+                <div class="bg-bgGray p-8 rounded-40">
+                    <h3 class="text-[24px] md:text-[30px] text-dark mb-3">Технічна зона</h3>
+                    <p class="text-[16px] text-dark80">Генератори, підлогове покриття, біотуалети, рукомийники, кліматизація за потреби.</p>
+                </div>
+                <div class="bg-bgGray p-8 rounded-40">
+                    <h3 class="text-[24px] md:text-[30px] text-dark mb-3">Брендинг-зона</h3>
+                    <p class="text-[16px] text-dark80">Фотозона, промопродукція, брендовані елементи, прапори, навігаційні таблички.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Packages -->
+    <section id="packages" class="px-4 md:px-8">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-[30px] md:text-[40px] text-dark mb-12 text-center">Три формати організації Дня поля</h2>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Package 1 -->
+                <div class="bg-bgGray p-8 rounded-40 flex flex-col">
+                    <h3 class="text-[30px] text-dark mb-2">Пакет 1 — Стандарт</h3>
+                    <p class="text-[16px] text-dark80 mb-6 min-h-[60px]">Для невеликих агроподій, презентацій, зустрічей із партнерами або дилерами.</p>
+                    
+                    <div class="bg-white rounded-[20px] p-4 mb-6 cursor-pointer custom-accordion">
+                        <div class="flex justify-between items-center acc-header">
+                            <span class="font-oswald text-[20px] text-dark">Що може входити:</span>
+                            <i data-lucide="chevron-down" class="accordion-icon text-accent"></i>
+                        </div>
+                        <div class="accordion-content pt-0 text-[16px] text-dark80 text-left">
+                            <ul class="list-disc pl-5 mt-4 space-y-2">
+                                <li>welcome-coffee;</li>
+                                <li>фуршет або обід;</li>
+                                <li>базові столи та стільці;</li>
+                                <li>шатер 3×3;</li>
+                                <li>персонал для обслуговування;</li>
+                                <li>базове сервірування.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-auto">
+                        <button onclick="openModal('Пакет: Стандарт')" class="w-full border-2 border-dark text-dark font-oswald text-[18px] uppercase px-6 py-4 rounded-60 hover:bg-dark hover:text-white transition">Прорахувати Стандарт</button>
+                    </div>
+                </div>
+
+                <!-- Package 2 -->
+                <div class="bg-dark p-8 rounded-40 flex flex-col relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-accent text-dark font-oswald px-6 py-2 rounded-bl-40 text-[16px]">ХІТ ВИБОРУ</div>
+                    <h3 class="text-[30px] text-white mb-2">Пакет 2 — Оптимальний</h3>
+                    <p class="text-[16px] text-gray-300 mb-6 min-h-[60px]">Для повноцінного Дня поля з презентаційною частиною, харчуванням і комфортною зоною.</p>
+                    
+                    <div class="bg-white/10 rounded-[20px] p-4 mb-6 cursor-pointer custom-accordion text-white">
+                        <div class="flex justify-between items-center acc-header">
+                            <span class="font-oswald text-[20px]">Що може входити:</span>
+                            <i data-lucide="chevron-down" class="accordion-icon text-accent"></i>
+                        </div>
+                        <div class="accordion-content pt-0 text-[16px] text-gray-300 text-left">
+                            <ul class="list-disc pl-5 mt-4 space-y-2">
+                                <li>welcome-coffee;</li>
+                                <li>банкет / фуршет;</li>
+                                <li>шатер або накриття;</li>
+                                <li>підлогове покриття;</li>
+                                <li>меблі та парасолі;</li>
+                                <li>звук / мікрофони;</li>
+                                <li>реєстрація гостей;</li>
+                                <li>персонал та тех. супровід.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-auto">
+                        <button onclick="openModal('Пакет: Оптимальний')" class="w-full bg-accent text-dark font-oswald text-[18px] uppercase px-6 py-4 rounded-60 hover:scale-105 transition shadow-lg flex justify-center items-center gap-2">
+                            <img src="https://img.icons8.com/ios-filled/50/261815/wheat.png" class="w-5 h-5" alt="колосок">
+                            Прорахувати Оптимальний
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Package 3 -->
+                <div class="bg-bgGray p-8 rounded-40 flex flex-col">
+                    <h3 class="text-[30px] text-dark mb-2">Пакет 3 — VIP / Під ключ</h3>
+                    <p class="text-[16px] text-dark80 mb-6 min-h-[60px]">Для великих агроподій, презентацій бренду, дилерських зустрічей і масштабних Днів поля.</p>
+                    
+                    <div class="bg-white rounded-[20px] p-4 mb-6 cursor-pointer custom-accordion">
+                        <div class="flex justify-between items-center acc-header">
+                            <span class="font-oswald text-[20px] text-dark">Що може входити:</span>
+                            <i data-lucide="chevron-down" class="accordion-icon text-accent"></i>
+                        </div>
+                        <div class="accordion-content pt-0 text-[16px] text-dark80 text-left">
+                            <ul class="list-disc pl-5 mt-4 space-y-2">
+                                <li>повне облаштування локації;</li>
+                                <li>електронна реєстрація;</li>
+                                <li>сцена, світло, екран;</li>
+                                <li>ведучий, шоу-програма;</li>
+                                <li>фото / відео, фотозона, декор;</li>
+                                <li>біотуалети, рукомийники;</li>
+                                <li>кейтеринг та персонал;</li>
+                                <li>повний технічний супровід.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-auto">
+                        <button onclick="openModal('Пакет: VIP')" class="w-full border-2 border-dark text-dark font-oswald text-[18px] uppercase px-6 py-4 rounded-60 hover:bg-dark hover:text-white transition">Отримати VIP-прорахунок</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Why Us -->
+    <section id="why-us" class="px-4 md:px-8">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-[30px] md:text-[40px] text-dark mb-12 text-center">Ми знаємо, як працюють агроподії</h2>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+                <div class="text-center p-6 border border-gray-200 rounded-40">
+                    <div class="text-[40px] font-oswald text-accent mb-2">1000+</div>
+                    <h3 class="text-[20px] font-oswald text-dark mb-2">Днів поля</h3>
+                    <p class="text-[14px] text-dark80">Досвід саме в польових заходах.</p>
+                </div>
+                <div class="text-center p-6 border border-gray-200 rounded-40">
+                    <div class="text-[40px] font-oswald text-accent mb-2">100+</div>
+                    <h3 class="text-[20px] font-oswald text-dark mb-2">Агрокомпаній</h3>
+                    <p class="text-[14px] text-dark80">Розуміємо специфіку аграрного бізнесу.</p>
+                </div>
+                <div class="text-center p-6 border border-gray-200 rounded-40">
+                    <div class="text-[40px] font-oswald text-accent mb-2">2</div>
+                    <h3 class="text-[20px] font-oswald text-dark mb-2">Власні ресторани</h3>
+                    <p class="text-[14px] text-dark80">Кейтеринг на власній базі виробництва.</p>
+                </div>
+                <div class="text-center p-6 border border-gray-200 rounded-40">
+                    <div class="text-[40px] font-oswald text-accent mb-2">100</div>
+                    <h3 class="text-[20px] font-oswald text-dark mb-2">Співробітників</h3>
+                    <p class="text-[14px] text-dark80">Повний штат для закриття всіх задач.</p>
+                </div>
+                <div class="text-center p-6 border border-gray-200 rounded-40">
+                    <div class="text-[40px] font-oswald text-accent mb-2"><i data-lucide="shield-check" class="w-10 h-10 mx-auto"></i></div>
+                    <h3 class="text-[20px] font-oswald text-dark mb-2">Один підрядник</h3>
+                    <p class="text-[14px] text-dark80">Все під ключ: їжа, шатри, техніка, персонал.</p>
+                </div>
+                <div class="text-center p-6 border border-gray-200 rounded-40">
+                    <div class="text-[40px] font-oswald text-accent mb-2"><i data-lucide="file-text" class="w-10 h-10 mx-auto"></i></div>
+                    <h3 class="text-[20px] font-oswald text-dark mb-2">Прозорий кошторис</h3>
+                    <p class="text-[14px] text-dark80">Один рахунок, один пакет документів.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. Process (Horizontal Carousel) -->
+    <section id="process" class="px-4 md:px-8 bg-dark py-20 rounded-40 mx-4 md:mx-8 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex justify-between items-end mb-12">
+                <h2 class="text-[30px] md:text-[40px] text-white">Від заявки до готової події — зрозумілий процес</h2>
+                <!-- Custom Swiper Navigation -->
+                <div class="hidden md:flex gap-4">
+                    <button class="process-prev w-12 h-12 rounded-full border border-white flex items-center justify-center text-white hover:bg-accent hover:text-dark hover:border-accent transition"><i data-lucide="arrow-left"></i></button>
+                    <button class="process-next w-12 h-12 rounded-full bg-accent flex items-center justify-center text-dark hover:scale-105 transition"><i data-lucide="arrow-right"></i></button>
+                </div>
+            </div>
+            
+            <!-- Swiper -->
+            <div class="swiper process-slider w-full overflow-visible">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide bg-white/10 backdrop-blur-sm p-8 rounded-40 border border-white/20">
+                        <div class="text-accent font-oswald text-[40px] mb-4">1</div>
+                        <h3 class="text-[24px] text-white font-oswald mb-3">Ви залишаєте заявку</h3>
+                        <p class="text-[16px] text-gray-300">Вказуєте дату, місто / локацію, кількість гостей і формат події.</p>
+                    </div>
+                    <div class="swiper-slide bg-white/10 backdrop-blur-sm p-8 rounded-40 border border-white/20">
+                        <div class="text-accent font-oswald text-[40px] mb-4">2</div>
+                        <h3 class="text-[24px] text-white font-oswald mb-3">Технічне завдання</h3>
+                        <p class="text-[16px] text-gray-300">Уточнюємо активності, таймінг, формат харчування, обладнання, персонал.</p>
+                    </div>
+                    <div class="swiper-slide bg-white/10 backdrop-blur-sm p-8 rounded-40 border border-white/20">
+                        <div class="text-accent font-oswald text-[40px] mb-4">3</div>
+                        <h3 class="text-[24px] text-white font-oswald mb-3">Комерційна пропозиція</h3>
+                        <p class="text-[16px] text-gray-300">Формуємо попередній кошторис з урахуванням задач події.</p>
+                    </div>
+                    <div class="swiper-slide bg-white/10 backdrop-blur-sm p-8 rounded-40 border border-white/20">
+                        <div class="text-accent font-oswald text-[40px] mb-4">4</div>
+                        <h3 class="text-[24px] text-white font-oswald mb-3">Коригуємо проєкт</h3>
+                        <p class="text-[16px] text-gray-300">Разом узгоджуємо меню, обладнання, наповнення зон і бюджет.</p>
+                    </div>
+                    <div class="swiper-slide bg-white/10 backdrop-blur-sm p-8 rounded-40 border border-white/20">
+                        <div class="text-accent font-oswald text-[40px] mb-4">5</div>
+                        <h3 class="text-[24px] text-white font-oswald mb-3">Підписуємо договір</h3>
+                        <p class="text-[16px] text-gray-300">Фіксуємо фінальне ТЗ, кошторис і відповідальність сторін.</p>
+                    </div>
+                    <div class="swiper-slide bg-white border border-accent p-8 rounded-40">
+                        <div class="text-dark font-oswald text-[40px] mb-4">6</div>
+                        <h3 class="text-[24px] text-dark font-oswald mb-3">Реалізуємо подію</h3>
+                        <p class="text-[16px] text-dark80 mb-6">Готуємо локацію, зустрічаємо гостей, забезпечуємо харчування, техніку.</p>
+                        <button onclick="openModal()" class="w-full bg-accent text-dark font-oswald px-4 py-3 rounded-60 uppercase text-center hover:scale-105 transition">Залишити заявку</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 11. Cases (Slider) -->
+    <section id="cases" class="px-4 md:px-8">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-[30px] md:text-[40px] text-dark mb-12 text-center">Події, які ми вже реалізовували для агросектору</h2>
+            
+            <div class="swiper cases-slider rounded-40 overflow-hidden relative">
+                <div class="swiper-wrapper">
+                    <!-- Slide 1 -->
+                    <div class="swiper-slide relative">
+                        <img src="https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&w=1200&q=80" alt="Кейс 1" class="w-full h-[400px] md:h-[600px] object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-dark/90 to-transparent p-8 pt-20">
+                            <h3 class="text-[24px] font-oswald text-accent mb-2">Презентація насіння | 300+ гостей</h3>
+                            <p class="text-white text-[16px]">Успішна презентація в полі з повним банкетним обслуговуванням.</p>
+                        </div>
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="swiper-slide relative">
+                        <img src="https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf?auto=format&fit=crop&w=1200&q=80" alt="Кейс 2" class="w-full h-[400px] md:h-[600px] object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-dark/90 to-transparent p-8 pt-20">
+                            <h3 class="text-[24px] font-oswald text-accent mb-2">Конференція дилерів | 150 гостей</h3>
+                            <p class="text-white text-[16px]">Встановлення шатрів, кліматизація, фуршет та технічний супровід сцени.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev text-accent"></div>
+                <div class="swiper-button-next text-accent"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 12. FAQ -->
+    <section class="px-4 md:px-8">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-[30px] md:text-[40px] text-dark mb-10 text-center">Питання, які часто виникають</h2>
+            
+            <div class="space-y-4">
+                <!-- FAQ Item -->
+                <div class="bg-bgGray rounded-40 p-6 cursor-pointer custom-accordion">
+                    <div class="flex justify-between items-center acc-header">
+                        <span class="font-oswald text-[20px] md:text-[24px] text-dark pr-4">Ви працюєте по всій Україні?</span>
+                        <div class="w-10 h-10 flex-shrink-0 bg-white rounded-full flex items-center justify-center shadow-sm">
+                            <i data-lucide="chevron-down" class="accordion-icon text-dark"></i>
+                        </div>
+                    </div>
+                    <div class="accordion-content pt-0 text-[16px] text-dark80">
+                        <p class="mt-4">Так, готові розглянути організацію Дня поля по всій Україні.</p>
+                    </div>
+                </div>
+                <!-- FAQ Item -->
+                <div class="bg-bgGray rounded-40 p-6 cursor-pointer custom-accordion">
+                    <div class="flex justify-between items-center acc-header">
+                        <span class="font-oswald text-[20px] md:text-[24px] text-dark pr-4">Чи можна замовити тільки кейтеринг без організації всієї події?</span>
+                        <div class="w-10 h-10 flex-shrink-0 bg-white rounded-full flex items-center justify-center shadow-sm">
+                            <i data-lucide="chevron-down" class="accordion-icon text-dark"></i>
+                        </div>
+                    </div>
+                    <div class="accordion-content pt-0 text-[16px] text-dark80">
+                        <p class="mt-4">Так, готові надати як повноцінну організацію вашої події, так і точково закрити питання ситих гостей.</p>
+                    </div>
+                </div>
+                <!-- FAQ Item -->
+                <div class="bg-bgGray rounded-40 p-6 cursor-pointer custom-accordion">
+                    <div class="flex justify-between items-center acc-header">
+                        <span class="font-oswald text-[20px] md:text-[24px] text-dark pr-4">Чи можете працювати на локації без інфраструктури?</span>
+                        <div class="w-10 h-10 flex-shrink-0 bg-white rounded-full flex items-center justify-center shadow-sm">
+                            <i data-lucide="chevron-down" class="accordion-icon text-dark"></i>
+                        </div>
+                    </div>
+                    <div class="accordion-content pt-0 text-[16px] text-dark80">
+                        <p class="mt-4">Так, готові працювати на відкритих майданчиках зі складною логістикою, погодою та відсутністю комунікацій.</p>
+                    </div>
+                </div>
+                <!-- FAQ Item -->
+                <div class="bg-bgGray rounded-40 p-6 cursor-pointer custom-accordion">
+                    <div class="flex justify-between items-center acc-header">
+                        <span class="font-oswald text-[20px] md:text-[24px] text-dark pr-4">Чи можна отримати попередній кошторис?</span>
+                        <div class="w-10 h-10 flex-shrink-0 bg-white rounded-full flex items-center justify-center shadow-sm">
+                            <i data-lucide="chevron-down" class="accordion-icon text-dark"></i>
+                        </div>
+                    </div>
+                    <div class="accordion-content pt-0 text-[16px] text-dark80">
+                        <p class="mt-4">Так, після ТЗ готується попередня комерційна пропозиція, далі проєкт коригується й фіналізується кошторис.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 13. Footer / Final CTA -->
+    <section class="px-4 md:px-8">
+        <div class="max-w-7xl mx-auto bg-dark p-8 md:p-16 rounded-40 flex flex-col items-center text-center">
+            <h2 class="text-[30px] md:text-[50px] text-white mb-6">Плануєте День поля або агроподію? <br> Отримайте попередній прорахунок</h2>
+            <p class="text-[16px] md:text-[18px] text-gray-300 max-w-2xl mb-10">Залиште заявку — ми уточнимо формат, кількість гостей, локацію, задачі події та підготуємо пропозицію з меню, обладнанням і кошторисом.</p>
+            
+            <button onclick="openModal()" class="bg-accent text-dark font-oswald text-[20px] uppercase px-10 py-5 rounded-60 hover:scale-105 transition shadow-lg flex items-center justify-center gap-3">
+                <img src="https://img.icons8.com/ios-filled/50/261815/wheat.png" class="w-6 h-6" alt="колосок">
+                Отримати прорахунок
+            </button>
+            <p class="mt-6 text-[14px] text-gray-400">🎁 Бонус: залишай заявку зараз і гарантовано отримай безкоштовну сервіровку на ваш банкет</p>
+        </div>
+    </section>
+
+    <!-- POPUP MODAL -->
+    <div id="leadModal" class="fixed inset-0 z-50 flex items-center justify-center hidden opacity-0 transition-opacity duration-300">
+        <!-- Backdrop -->
+        <div class="absolute inset-0 bg-black/70 backdrop-blur-sm" onclick="closeModal()"></div>
+        
+        <!-- Modal Content -->
+        <div class="relative bg-white rounded-40 w-full max-w-lg p-8 mx-4 transform scale-95 transition-transform duration-300" id="modalContent">
+            <button onclick="closeModal()" class="absolute top-6 right-6 text-dark80 hover:text-dark">
+                <i data-lucide="x" class="w-8 h-8"></i>
+            </button>
+            
+            <h3 class="font-oswald text-[30px] text-dark mb-2">Отримати прорахунок</h3>
+            <p class="text-[16px] text-dark80 mb-6">Введіть дані, і наш менеджер зв'яжеться з вами.</p>
+            
+            <form id="leadForm" class="space-y-4">
+                <input type="hidden" id="requestParam" value="">
+                
+                <div>
+                    <label class="block text-[14px] text-dark80 mb-1">Ім'я *</label>
+                    <input type="text" id="name" required class="w-full h-[55px] px-5 rounded-[16px] bg-bgGray border border-gray-200 focus:outline-none focus:border-accent text-[16px]">
+                </div>
+                
+                <div>
+                    <label class="block text-[14px] text-dark80 mb-1">Назва компанії</label>
+                    <input type="text" id="company" class="w-full h-[55px] px-5 rounded-[16px] bg-bgGray border border-gray-200 focus:outline-none focus:border-accent text-[16px]">
+                </div>
+                
+                <div>
+                    <label class="block text-[14px] text-dark80 mb-1">Телефон *</label>
+                    <input type="tel" id="phone" required class="w-full h-[55px] rounded-[16px] bg-bgGray border border-gray-200 focus:outline-none focus:border-accent text-[16px] !pl-[50px]">
+                    <span id="phoneError" class="text-red-500 text-[12px] hidden mt-1">Невірний формат номера</span>
+                </div>
+                
+                <div>
+                    <label class="block text-[14px] text-dark80 mb-1">Короткий запит (опціонально)</label>
+                    <textarea id="requestTxt" rows="2" class="w-full px-5 py-3 rounded-[16px] bg-bgGray border border-gray-200 focus:outline-none focus:border-accent text-[16px]"></textarea>
+                </div>
+                
+                <button type="submit" id="submitBtn" class="w-full bg-accent text-dark font-oswald text-[18px] uppercase h-[60px] rounded-60 hover:scale-105 transition mt-4 flex items-center justify-center">
+                    Відправити заявку
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/intlTelInput.min.js"></script>
+    
+    <script>
+        // Ініціалізація іконок
+        lucide.createIcons();
+
+        // Ініціалізація каруселі Процес (Swiper)
+        new Swiper('.process-slider', {
+            slidesPerView: 'auto',
+            spaceBetween: 20,
+            navigation: {
+                nextEl: '.process-next',
+                prevEl: '.process-prev',
+            },
+        });
+
+        // Ініціалізація слайдера Кейсів
+        new Swiper('.cases-slider', {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+            pagination: { el: '.swiper-pagination', clickable: true }
+        });
+
+        // Accordion Логіка
+        document.querySelectorAll('.custom-accordion').forEach(acc => {
+            const header = acc.querySelector('.acc-header');
+            header.addEventListener('click', () => {
+                const content = acc.querySelector('.accordion-content');
+                const icon = acc.querySelector('.accordion-icon');
+                
+                // Закрити інші (опціонально)
+                /*
+                document.querySelectorAll('.accordion-content').forEach(c => {
+                    if (c !== content) c.classList.remove('active');
+                });
+                document.querySelectorAll('.accordion-icon').forEach(i => {
+                    if (i !== icon) i.classList.remove('active');
+                });
+                */
+
+                content.classList.toggle('active');
+                icon.classList.toggle('active');
+            });
+        });
+
+        // Плавний скрол для меню
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.getElementById('mobileMenu').classList.add('hidden'); // закрити мобільне меню
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                const targetElement = document.querySelector(targetId);
+                const headerOffset = 100; // висота відступу для sticky header
+                const elementPosition = targetElement.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                window.scrollTo({ top: offsetPosition, behavior: "smooth" });
+            });
+        });
+
+        // Мобільне меню
+        document.getElementById('mobileMenuBtn').addEventListener('click', () => {
+            document.getElementById('mobileMenu').classList.remove('hidden');
+            document.getElementById('mobileMenu').classList.add('flex');
+        });
+        document.getElementById('closeMobileMenu').addEventListener('click', () => {
+            document.getElementById('mobileMenu').classList.add('hidden');
+        });
+
+        // Modal Logic
+        const modal = document.getElementById('leadModal');
+        const modalContent = document.getElementById('modalContent');
+        
+        function openModal(param = '') {
+            if(param) document.getElementById('requestParam').value = param;
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                modalContent.classList.remove('scale-95');
+            }, 10);
+            
+            // FB Pixel Checkout
+            if(typeof fbq !== 'undefined') {
+                fbq('track', 'InitiateCheckout');
+            }
+        }
+
+        function closeModal() {
+            modal.classList.add('opacity-0');
+            modalContent.classList.add('scale-95');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300);
+        }
+
+        // Intl-Tel-Input (Телефон з прапорцями)
+        const input = document.querySelector("#phone");
+        const errorMsg = document.querySelector("#phoneError");
+        
+        const iti = window.intlTelInput(input, {
+            initialCountry: "auto",
+            geoIpLookup: function(success, failure) {
+                fetch("https://get.geojs.io/v1/ip/country.json")
+                    .then(res => res.json())
+                    .then(data => success(data.country))
+                    .catch(() => success("UA"));
+            },
+            utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/utils.js",
+            separateDialCode: true,
+        });
+
+        // Парсинг UTM-міток
+        function getUTMs() {
+            const urlParams = new URLSearchParams(window.location.search);
+            return {
+                source: urlParams.get('utm_source') || '',
+                medium: urlParams.get('utm_medium') || '',
+                campaign: urlParams.get('utm_campaign') || '',
+                content: urlParams.get('utm_content') || '',
+                term: urlParams.get('utm_term') || ''
+            };
+        }
+
+        // Відправка форми
+        document.getElementById('leadForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            errorMsg.classList.add('hidden');
+            input.classList.remove('border-red-500');
+
+            if (!iti.isValidNumber()) {
+                errorMsg.classList.remove('hidden');
+                input.classList.add('border-red-500');
+                return;
+            }
+
+            const btn = document.getElementById('submitBtn');
+            const originalBtnText = btn.innerHTML;
+            btn.innerHTML = 'Відправка...';
+            btn.disabled = true;
+
+            const utms = getUTMs();
+            let finalRequest = document.getElementById('requestTxt').value;
+            if(document.getElementById('requestParam').value) {
+                finalRequest = `[Пакет: ${document.getElementById('requestParam').value}] ` + finalRequest;
+            }
+
+            const payload = {
+                name: document.getElementById('name').value,
+                company: document.getElementById('company').value,
+                phone: iti.getNumber(),
+                request: finalRequest,
+                ...utms
+            };
+
+            // ВСТАВТЕ URL ВАШОГО GOOGLE APP SCRIPT СЮДИ
+            const GOOGLE_SCRIPT_URL = 'YOUR_GOOGLE_SCRIPT_MACRO_URL';
+            // ВСТАВТЕ ПОСИЛАННЯ НА БОТА АБО КАНАЛ СЮДИ
+            const TG_BOT_URL = 'YOUR_BOT_LINK'; 
+
+            try {
+                // Відправляємо дані POST запитом
+                await fetch(GOOGLE_SCRIPT_URL, {
+                    method: 'POST',
+                    mode: 'no-cors', // Потрібно для Google Sheets щоб не блокувало CORS
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                // FB Pixel Lead
+                if(typeof fbq !== 'undefined') {
+                    fbq('track', 'Lead');
+                }
+
+                // Редирект в бота
+                window.location.href = TG_BOT_URL;
+
+            } catch (err) {
+                console.error(err);
+                btn.innerHTML = 'Помилка. Спробуйте ще';
+                btn.disabled = false;
+            }
+        });
+    </script>
+</body>
+</html>
