@@ -71,7 +71,7 @@
     <style>
         /* Custom Styles */
         html { scroll-behavior: smooth; }
-        section { scroll-margin-top: 100px; } /* Щоб меню не перекривало заголовки при скролі */
+        section { scroll-margin-top: 100px; }
         
         body { color: #261815; background-color: #FFFFFF; }
         .iti { width: 100%; }
@@ -85,33 +85,41 @@
         .swiper-slide img { width: 100%; height: 400px; object-fit: cover; border-radius: 16px; }
         .swiper-button-next, .swiper-button-prev { color: #F2C364 !important; }
         .swiper-pagination-bullet-active { background: #F2C364 !important; }
-
-        /* Сховати скролбар для навігації на мобільних */
-        .scrollbar-hide::-webkit-scrollbar { display: none; }
-        .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
 </head>
 <body class="font-roboto antialiased text-dark">
 
-    <!-- Навігаційне меню (Sticky) -->
+    <!-- Навігаційне меню (Sticky + Бургер) -->
     <div class="sticky top-[10px] z-40 px-4 w-full">
-        <nav class="bg-[#ffffff] shadow-xl rounded-[40px] mx-auto max-w-7xl px-6 py-3 flex items-center justify-start xl:justify-center gap-6 overflow-x-auto scrollbar-hide border border-gray-100">
-            <a href="#block1" class="text-[#261815] font-roboto font-medium text-[16px] whitespace-nowrap hover:opacity-70 transition-opacity">Головна</a>
-            <a href="#block2" class="text-[#261815] font-roboto font-medium text-[16px] whitespace-nowrap hover:opacity-70 transition-opacity">Проблеми та рішення</a>
-            <a href="#block6" class="text-[#261815] font-roboto font-medium text-[16px] whitespace-nowrap hover:opacity-70 transition-opacity">Пакети послуг</a>
-            <a href="#block7" class="text-[#261815] font-roboto font-medium text-[16px] whitespace-nowrap hover:opacity-70 transition-opacity">Чому ми?</a>
-            <a href="#block9" class="text-[#261815] font-roboto font-medium text-[16px] whitespace-nowrap hover:opacity-70 transition-opacity">Процес</a>
-            <a href="#block11" class="text-[#261815] font-roboto font-medium text-[16px] whitespace-nowrap hover:opacity-70 transition-opacity">Наші кейси</a>
-            <button onclick="openModal('Залишити заявку')" class="bg-[#261815] text-[#FFFFFF] font-oswald font-bold text-[16px] px-6 py-2.5 rounded-[40px] whitespace-nowrap transition-colors hover:bg-opacity-80 flex-shrink-0">Залишити заявку</button>
+        <nav class="bg-[#ffffff] shadow-xl rounded-[40px] mx-auto max-w-7xl px-6 py-3 flex flex-wrap items-center justify-between xl:justify-center border border-gray-100 transition-all duration-300">
+            
+            <!-- Мобільна шапка (видима тільки на малих екранах) -->
+            <div class="flex items-center justify-between w-full lg:w-auto lg:hidden">
+                <span class="text-[#261815] font-oswald font-bold text-[18px]">АГРО КЕЙТЕРИНГ</span>
+                <button id="burgerBtn" class="flex flex-col gap-[5px] p-2 focus:outline-none">
+                    <span class="w-[24px] h-[2px] bg-[#261815] transition-all duration-300 transform origin-center rounded"></span>
+                    <span class="w-[24px] h-[2px] bg-[#261815] transition-all duration-300 rounded"></span>
+                    <span class="w-[24px] h-[2px] bg-[#261815] transition-all duration-300 transform origin-center rounded"></span>
+                </button>
+            </div>
+
+            <!-- Лінки меню -->
+            <div id="navMenu" class="hidden lg:flex w-full lg:w-auto flex-col lg:flex-row items-center gap-4 lg:gap-6 pt-4 lg:pt-0 pb-2 lg:pb-0 transition-all duration-300">
+                <a href="#block1" class="nav-link text-[#261815] font-roboto font-medium text-[16px] whitespace-nowrap hover:opacity-70 transition-opacity">Головна</a>
+                <a href="#block2" class="nav-link text-[#261815] font-roboto font-medium text-[16px] whitespace-nowrap hover:opacity-70 transition-opacity">Проблеми та рішення</a>
+                <a href="#block6" class="nav-link text-[#261815] font-roboto font-medium text-[16px] whitespace-nowrap hover:opacity-70 transition-opacity">Пакети послуг</a>
+                <a href="#block7" class="nav-link text-[#261815] font-roboto font-medium text-[16px] whitespace-nowrap hover:opacity-70 transition-opacity">Чому ми?</a>
+                <a href="#block9" class="nav-link text-[#261815] font-roboto font-medium text-[16px] whitespace-nowrap hover:opacity-70 transition-opacity">Процес</a>
+                <a href="#block11" class="nav-link text-[#261815] font-roboto font-medium text-[16px] whitespace-nowrap hover:opacity-70 transition-opacity">Наші кейси</a>
+                <button onclick="openModal('Залишити заявку')" class="nav-link bg-[#261815] text-[#FFFFFF] font-oswald font-bold text-[16px] px-6 py-2.5 rounded-[40px] whitespace-nowrap transition-colors hover:bg-opacity-80 w-full lg:w-auto mt-2 lg:mt-0">Залишити заявку</button>
+            </div>
         </nav>
     </div>
 
     <!-- БЛОК 1: Hero -->
     <section id="block1" class="relative min-h-screen flex flex-col bg-[#ffffff] -mt-[74px]">
-        <!-- Відступ -mt-[74px] компенсує висоту меню, щоб картинка була на весь екран -->
         <!-- Background Image -->
         <div class="absolute inset-0 z-0">
-            <!-- ОПТИМІЗАЦІЯ: fetchpriority="high" для миттєвого відображення -->
             <img src="Block1.jpg" alt="Агроподія" class="w-full h-full object-cover" fetchpriority="high">
         </div>
         
@@ -766,6 +774,37 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
     
     <script>
+        // Логіка бургер-меню
+        document.addEventListener('DOMContentLoaded', function() {
+            const burgerBtn = document.getElementById('burgerBtn');
+            const navMenu = document.getElementById('navMenu');
+            const spans = burgerBtn.querySelectorAll('span');
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            function toggleMenu() {
+                navMenu.classList.toggle('hidden');
+                navMenu.classList.toggle('flex');
+                
+                // Анімація бургера в хрестик
+                spans[0].classList.toggle('rotate-45');
+                spans[0].classList.toggle('translate-y-[8px]');
+                spans[1].classList.toggle('opacity-0');
+                spans[2].classList.toggle('-rotate-45');
+                spans[2].classList.toggle('-translate-y-[8px]');
+            }
+
+            burgerBtn.addEventListener('click', toggleMenu);
+
+            // Закривати меню при кліку на будь-яке посилання на мобільному
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (window.innerWidth < 1024 && !navMenu.classList.contains('hidden')) {
+                        toggleMenu();
+                    }
+                });
+            });
+        });
+
         // ОПТИМІЗАЦІЯ: Ліниве завантаження фонових зображень
         document.addEventListener("DOMContentLoaded", function() {
             var lazyBackgrounds = [].slice.call(document.querySelectorAll(".lazy-bg"));
