@@ -73,7 +73,7 @@
         details > summary::-webkit-details-marker { display: none; }
         .accordion-content { transition: all 0.3s ease-in-out; }
         
-        /* Swiper Fixes & Rounded Images */
+        /* Swiper Fixes */
         .swiper-slide img { width: 100%; height: 400px; object-fit: cover; border-radius: 16px; }
         .swiper-button-next, .swiper-button-prev { color: #F2C364 !important; }
         .swiper-pagination-bullet-active { background: #F2C364 !important; }
@@ -82,47 +82,53 @@
 <body class="font-roboto antialiased text-dark">
 
     <!-- БЛОК 1: Hero -->
-    <section class="relative min-h-screen bg-[#ffffff] mb-[60px] flex flex-col">
-        <!-- Background Image (Overlay removed) -->
+    <section class="relative min-h-screen flex flex-col bg-[#ffffff]">
+        <!-- Background Image -->
         <div class="absolute inset-0 z-0">
             <img src="Block1.jpg" alt="Агроподія" class="w-full h-full object-cover">
         </div>
         
         <!-- Container with vertical layout and automatic space -->
         <div class="container mx-auto px-4 z-10 py-20 flex flex-col justify-between flex-grow">
-            
-            <!-- Text + Button Block at the top -->
+            <!-- Text + Button Block -->
             <div class="flex flex-col gap-[20px] max-w-4xl">
                 <h1 class="font-oswald text-h1-m md:text-h1 font-bold text-[#261815]">Організація агроподії під ключ по всій Україні</h1>
                 <p class="text-p-main font-roboto text-[#261815]">Облаштуємо локацію, організуємо реєстрацію гостей, харчування, технічний супровід, персонал та повний сервіс для агроподії. Ми створимо сервіс, який працює на репутацію Вашої компанії.</p>
                 
-                <button onclick="openModal('Отримати прорахунок Дня поля')" class="bg-[#ffffff] text-[#261815] font-oswald font-bold py-4 px-8 rounded-2xl transition-all shadow-lg transform hover:scale-105 self-start uppercase">
+                <button onclick="openModal('Отримати прорахунок Дня поля')" class="bg-[#ffffff] text-[#261815] font-oswald font-bold py-4 px-8 rounded-2xl transition-all shadow-lg transform hover:scale-105 self-start">
                     Отримати прорахунок Дня поля
                 </button>
             </div>
+            
+            <!-- Empty space takes the rest -->
+            <div></div>
+        </div>
+    </section>
 
-            <!-- Statistics Block lower -->
-            <div class="flex flex-col gap-[10px] mt-12">
-                <!-- First Row -->
-                <div class="flex flex-col md:flex-row gap-[10px]">
-                    <div class="bg-[#ffffff] text-[#261815] text-center flex flex-col items-center justify-center p-6 rounded-2xl flex-1">
-                        <h3 class="font-oswald text-[16px] leading-[18px] font-bold text-[#261815] mb-1">Понад 15 років</h3>
-                        <p class="font-roboto text-[14px] text-[#261815]">досвіду в організації заходів</p>
+    <!-- БЛОК: Статистика (винесено з Hero) -->
+    <section class="pt-[60px] pb-[60px] bg-[#ffffff]">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col gap-[10px]">
+                <!-- Row 1 -->
+                <div class="flex flex-row gap-[10px]">
+                    <div class="flex flex-col items-center justify-center text-center p-6 rounded-2xl flex-1" style="background-color: rgba(38, 24, 21, 0.8);">
+                        <h3 class="font-oswald text-[16px] leading-[18px] font-bold text-[#ffffff] mb-1">Понад 15 років</h3>
+                        <p class="font-roboto text-[14px] text-[#ffffff]">досвіду в організації заходів</p>
                     </div>
-                    <div class="bg-[#ffffff] text-[#261815] text-center flex flex-col items-center justify-center p-6 rounded-2xl flex-1">
-                        <h3 class="font-oswald text-[16px] leading-[18px] font-bold text-[#261815] mb-1">1000+</h3>
-                        <p class="font-roboto text-[14px] text-[#261815]">проведених Днів поля</p>
+                    <div class="flex flex-col items-center justify-center text-center p-6 rounded-2xl flex-1" style="background-color: rgba(38, 24, 21, 0.8);">
+                        <h3 class="font-oswald text-[16px] leading-[18px] font-bold text-[#ffffff] mb-1">1000+</h3>
+                        <p class="font-roboto text-[14px] text-[#ffffff]">проведених Днів поля</p>
                     </div>
                 </div>
-                <!-- Second Row -->
-                <div class="flex flex-col md:flex-row gap-[10px]">
-                    <div class="bg-[#ffffff] text-[#261815] text-center flex flex-col items-center justify-center p-6 rounded-2xl flex-1">
-                        <h3 class="font-oswald text-[16px] leading-[18px] font-bold text-[#261815] mb-1">100+</h3>
-                        <p class="font-roboto text-[14px] text-[#261815]">агрокомпаній серед клієнтів</p>
+                <!-- Row 2 -->
+                <div class="flex flex-row gap-[10px]">
+                    <div class="flex flex-col items-center justify-center text-center p-6 rounded-2xl flex-1" style="background-color: rgba(38, 24, 21, 0.8);">
+                        <h3 class="font-oswald text-[16px] leading-[18px] font-bold text-[#ffffff] mb-1">100+</h3>
+                        <p class="font-roboto text-[14px] text-[#ffffff]">агрокомпаній серед клієнтів</p>
                     </div>
-                    <div class="bg-[#ffffff] text-[#261815] text-center flex flex-col items-center justify-center p-6 rounded-2xl flex-1">
-                        <h3 class="font-oswald text-[16px] leading-[18px] font-bold text-[#261815] mb-1">Власні</h3>
-                        <p class="font-roboto text-[14px] text-[#261815]">ресторани, кухня та персонал</p>
+                    <div class="flex flex-col items-center justify-center text-center p-6 rounded-2xl flex-1" style="background-color: rgba(38, 24, 21, 0.8);">
+                        <h3 class="font-oswald text-[16px] leading-[18px] font-bold text-[#ffffff] mb-1">Власні</h3>
+                        <p class="font-roboto text-[14px] text-[#ffffff]">ресторани, кухня та персонал</p>
                     </div>
                 </div>
             </div>
@@ -130,244 +136,272 @@
     </section>
 
     <!-- БЛОК 2: Ризики -->
-    <section class="py-20 bg-[#ffffff] mb-[60px]">
+    <section class="pt-[60px] pb-[60px] bg-[#ffffff]">
         <div class="container mx-auto px-4">
-            <div class="text-center max-w-3xl mx-auto mb-16">
+            <div class="flex flex-col items-center justify-center text-center max-w-3xl mx-auto mb-16">
                 <h2 class="font-oswald text-h2-m md:text-h2 font-bold mb-6 text-dark">Польова подія має десятки ризиків, які не видно на старті</h2>
-                <p class="text-p-main text-dark80">Організувати День поля складніше, ніж звичайний корпоратив чи банкет. Часто локація знаходиться за містом, без готової інфраструктури, з обмеженим доступом до електрики, води, меблів, техніки та комфортної зони для гостей.</p>
+                <p class="text-p-main text-[#261815]">Організувати День поля складніше, ніж звичайний корпоратив чи банкет. Часто локація знаходиться за містом, без готової інфраструктури, з обмеженим доступом до електрики, води, меблів, техніки та комфортної зони для гостей.</p>
             </div>
 
-            <!-- Складний грід: 3 зверху, 2 знизу (використовуємо 6 колонок для точного розподілу) -->
-            <div class="grid grid-cols-1 md:grid-cols-6 gap-6">
-                <div class="md:col-span-2 bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
-                    <h3 class="font-oswald text-h3-m font-bold text-dark mb-3">Погода</h3>
-                    <p class="text-p-sub text-dark80">Спека, дощ, вітер, пил, відсутність тіні.</p>
+            <!-- Image Block -->
+            <div class="w-full p-[16px] mb-8">
+                <div class="w-full h-[400px] lg:h-[600px] bg-cover bg-center bg-no-repeat rounded-[40px] shadow-xl overflow-hidden" style="background-image: url('Block2.png');"></div>
+            </div>
+
+            <!-- Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-6 gap-[10px]">
+                <div class="md:col-span-2 bg-[#ffffff] p-6 rounded-2xl shadow-sm border-2 border-[#261815] flex flex-col items-center justify-center text-center">
+                    <h3 class="font-oswald text-h3-m font-bold text-[#261815] mb-3">Погода</h3>
+                    <p class="text-p-sub text-[#261815]">Спека, дощ, вітер, пил, відсутність тіні.</p>
                 </div>
-                <div class="md:col-span-2 bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
-                    <h3 class="font-oswald text-h3-m font-bold text-dark mb-3">Локація без інфраструктури</h3>
-                    <p class="text-p-sub text-dark80">Немає води, електрики, зручних зон для гостей.</p>
+                <div class="md:col-span-2 bg-[#ffffff] p-6 rounded-2xl shadow-sm border-2 border-[#261815] flex flex-col items-center justify-center text-center">
+                    <h3 class="font-oswald text-h3-m font-bold text-[#261815] mb-3">Локація без інфраструктури</h3>
+                    <p class="text-p-sub text-[#261815]">Немає води, електрики, зручних зон для гостей.</p>
                 </div>
-                <div class="md:col-span-2 bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
-                    <h3 class="font-oswald text-h3-m font-bold text-dark mb-3">Багато підрядників</h3>
-                    <p class="text-p-sub text-dark80">Окремо шатри, окремо їжа, окремо звук, окремо меблі, окремо реєстрація.</p>
+                <div class="md:col-span-2 bg-[#ffffff] p-6 rounded-2xl shadow-sm border-2 border-[#261815] flex flex-col items-center justify-center text-center">
+                    <h3 class="font-oswald text-h3-m font-bold text-[#261815] mb-3">Багато підрядників</h3>
+                    <p class="text-p-sub text-[#261815]">Окремо шатри, окремо їжа, окремо звук, окремо меблі, окремо реєстрація.</p>
                 </div>
-                <div class="md:col-span-3 bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
-                    <h3 class="font-oswald text-h3-m font-bold text-dark mb-3">Ризик зірвати враження</h3>
-                    <p class="text-p-sub text-dark80">Гості можуть приїхати, але замість презентації продукту запам’ятати черги, спеку, хаос і погане харчування.</p>
+                <div class="md:col-span-3 bg-[#ffffff] p-6 rounded-2xl shadow-sm border-2 border-[#261815] flex flex-col items-center justify-center text-center">
+                    <h3 class="font-oswald text-h3-m font-bold text-[#261815] mb-3">Ризик зірвати враження</h3>
+                    <p class="text-p-sub text-[#261815]">Гості можуть приїхати, але замість презентації продукту запам’ятати черги, спеку, хаос і погане харчування.</p>
                 </div>
-                <div class="md:col-span-3 bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
-                    <h3 class="font-oswald text-h3-m font-bold text-dark mb-3">Складний контроль бюджету</h3>
-                    <p class="text-p-sub text-dark80">Багато дрібних витрат, прихованих доплат і неузгоджених позицій.</p>
+                <div class="md:col-span-3 bg-[#ffffff] p-6 rounded-2xl shadow-sm border-2 border-[#261815] flex flex-col items-center justify-center text-center">
+                    <h3 class="font-oswald text-h3-m font-bold text-[#261815] mb-3">Складний контроль бюджету</h3>
+                    <p class="text-p-sub text-[#261815]">Багато дрібних витрат, прихованих доплат і неузгоджених позицій.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- БЛОК 3: Єдиний підрядник -->
-    <section class="flex flex-col lg:flex-row min-h-[600px] items-center bg-[#ffffff] mb-[60px]">
-        <!-- Фото (з відступами та заокругленням) -->
-        <div class="w-full lg:w-1/2 p-4 lg:p-12">
-            <div class="w-full h-[400px] lg:h-[600px] bg-cover bg-center rounded-2xl shadow-xl" style="background-image: url('Block3.png');"></div>
-        </div>
-        
-        <!-- Текст -->
-        <div class="w-full lg:w-1/2 p-8 lg:pr-16 flex flex-col justify-center">
-            <h2 class="font-oswald text-h2-m md:text-h2 font-bold mb-4 text-dark">Ми організовуємо День поля як єдиний підрядник</h2>
-            <p class="text-p-main text-dark80 mb-8">Ви отримуєте не набір окремих послуг, а готову систему проведення агроподії: від технічного завдання до демонтажу після завершення.</p>
+    <section class="pt-[60px] pb-[60px] bg-[#ffffff]">
+        <div class="container mx-auto px-4 flex flex-col lg:flex-row items-center gap-[10px]">
+            <!-- Текст (Тепер перший) -->
+            <div class="w-full lg:w-1/2 flex flex-col justify-center">
+                <h2 class="font-oswald text-h2-m md:text-h2 font-bold mb-4 text-[#261815]">Ми організовуємо День поля як єдиний підрядник</h2>
+                <p class="text-p-main text-[#261815] mb-8">Ви отримуєте не набір окремих послуг, а готову систему проведення агроподії: від технічного завдання до демонтажу після завершення.</p>
+                
+                <details class="group bg-gray-50 rounded-[40px] cursor-pointer border border-gray-200 overflow-hidden">
+                    <summary class="font-oswald text-h3-m font-bold p-6 flex justify-between items-center text-dark transition-colors">
+                        Що входить в організацію
+                        <span class="text-2xl group-open:rotate-45 transition-transform">+</span>
+                    </summary>
+                    <div class="p-6 text-p-main text-dark bg-[#F2C364]">
+                        <ul class="space-y-2">
+                            <li class="flex items-start gap-2"><img src="marker.png" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0"><span class="text-[#261815]">облаштування території;</span></li>
+                            <li class="flex items-start gap-2"><img src="marker.png" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0"><span class="text-[#261815]">шатри, меблі, столи, стільці;</span></li>
+                            <li class="flex items-start gap-2"><img src="marker.png" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0"><span class="text-[#261815]">сцена, звук, світло;</span></li>
+                            <li class="flex items-start gap-2"><img src="marker.png" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0"><span class="text-[#261815]">welcome-зона;</span></li>
+                            <li class="flex items-start gap-2"><img src="marker.png" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0"><span class="text-[#261815]">електронна реєстрація гостей;</span></li>
+                            <li class="flex items-start gap-2"><img src="marker.png" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0"><span class="text-[#261815]">кейтеринг;</span></li>
+                            <li class="flex items-start gap-2"><img src="marker.png" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0"><span class="text-[#261815]">кава-брейк;</span></li>
+                            <li class="flex items-start gap-2"><img src="marker.png" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0"><span class="text-[#261815]">фуршет або банкет;</span></li>
+                            <li class="flex items-start gap-2"><img src="marker.png" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0"><span class="text-[#261815]">комплексні обіди;</span></li>
+                            <li class="flex items-start gap-2"><img src="marker.png" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0"><span class="text-[#261815]">персонал;</span></li>
+                            <li class="flex items-start gap-2"><img src="marker.png" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0"><span class="text-[#261815]">організаційна підтримка;</span></li>
+                            <li class="flex items-start gap-2"><img src="marker.png" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0"><span class="text-[#261815]">фото / відео за потреби;</span></li>
+                            <li class="flex items-start gap-2"><img src="marker.png" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0"><span class="text-[#261815]">демонтаж після події.</span></li>
+                        </ul>
+                    </div>
+                </details>
+            </div>
             
-            <details class="group bg-gray-50 rounded-2xl cursor-pointer border border-gray-200">
-                <summary class="font-oswald text-h3-m font-bold p-6 flex justify-between items-center group-open:bg-accent group-open:text-dark transition-colors rounded-2xl">
-                    Що входить в організацію
-                    <span class="text-2xl group-open:rotate-45 transition-transform">+</span>
-                </summary>
-                <div class="p-6 text-p-main text-dark bg-accent bg-opacity-20 rounded-b-2xl">
-                    <ul class="list-disc pl-5 space-y-2">
-                        <li>облаштування території;</li>
-                        <li>шатри, меблі, столи, стільці;</li>
-                        <li>сцена, звук, світло;</li>
-                        <li>welcome-зона;</li>
-                        <li>електронна реєстрація гостей;</li>
-                        <li>кейтеринг;</li>
-                        <li>кава-брейк;</li>
-                        <li>фуршет або банкет;</li>
-                        <li>комплексні обіди;</li>
-                        <li>персонал;</li>
-                        <li>організаційна підтримка;</li>
-                        <li>фото / відео за потреби;</li>
-                        <li>демонтаж після події.</li>
-                    </ul>
-                </div>
-            </details>
+            <!-- Фото (Тепер друге) -->
+            <div class="w-full lg:w-1/2 p-[16px] mb-8">
+                <div class="w-full h-[400px] lg:h-[600px] bg-cover bg-center bg-no-repeat rounded-[40px] shadow-xl overflow-hidden" style="background-image: url('Block3.png');"></div>
+            </div>
         </div>
     </section>
 
     <!-- БЛОК 4: Інфраструктура -->
-    <section class="py-20 bg-[#ffffff] mb-[60px]">
+    <section class="pt-[60px] pb-[60px] bg-[#ffffff]">
         <div class="container mx-auto px-4">
-            <h2 class="font-oswald text-h2-m md:text-h2 font-bold mb-12 text-center text-dark">Повна інфраструктура для агроподії</h2>
+            <h2 class="font-oswald text-h2-m md:text-h2 font-bold mb-12 text-center text-[#261815]">Повна інфраструктура для агроподії</h2>
             
-            <!-- Грід 3 в ряд -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-dark80 p-8 border border-white/10 rounded-2xl">
-                    <h3 class="font-oswald text-h3-m font-bold mb-4 text-accent">Зона реєстрації</h3>
-                    <p class="text-p-sub text-gray-300">Стійка реєстрації, персонал, електронна реєстрація, навігація, видача матеріалів, контроль потоку гостей.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[10px]">
+                <div class="relative overflow-hidden p-8 rounded-2xl border border-white/10 bg-cover bg-center bg-no-repeat flex flex-col items-center justify-center text-center min-h-[240px]" style="background-image: url('Block4_1.png');">
+                    <div class="absolute inset-0 bg-[#261815]/60 z-0"></div>
+                    <div class="relative z-10 flex flex-col items-center justify-center">
+                        <h3 class="font-oswald text-h3-m font-bold mb-4 text-[#ffffff]">Зона реєстрації</h3>
+                        <p class="text-p-sub text-[#ffffff]">Стійка реєстрації, персонал, електронна реєстрація, навігація, видача матеріалів, контроль потоку гостей.</p>
+                    </div>
                 </div>
-                <div class="bg-dark80 p-8 border border-white/10 rounded-2xl">
-                    <h3 class="font-oswald text-h3-m font-bold mb-4 text-accent">Презентаційна зона</h3>
-                    <p class="text-p-sub text-gray-300">Сцена, звук, світло, екран або проєктор, мікрофони, місця для гостей, технічний супровід.</p>
+                <div class="relative overflow-hidden p-8 rounded-2xl border border-white/10 bg-cover bg-center bg-no-repeat flex flex-col items-center justify-center text-center min-h-[240px]" style="background-image: url('Block4_2.png');">
+                    <div class="absolute inset-0 bg-[#261815]/60 z-0"></div>
+                    <div class="relative z-10 flex flex-col items-center justify-center">
+                        <h3 class="font-oswald text-h3-m font-bold mb-4 text-[#ffffff]">Презентаційна зона</h3>
+                        <p class="text-p-sub text-[#ffffff]">Сцена, звук, світло, екран або проєктор, мікрофони, місця для гостей, технічний супровід.</p>
+                    </div>
                 </div>
-                <div class="bg-dark80 p-8 border border-white/10 rounded-2xl">
-                    <h3 class="font-oswald text-h3-m font-bold mb-4 text-accent">Кейтеринг-зона</h3>
-                    <p class="text-p-sub text-gray-300">Welcome-coffee, комплексний обід, фуршет, банкет, food-box, напої, персонал, сервірування.</p>
+                <div class="relative overflow-hidden p-8 rounded-2xl border border-white/10 bg-cover bg-center bg-no-repeat flex flex-col items-center justify-center text-center min-h-[240px]" style="background-image: url('Block4_3.png');">
+                    <div class="absolute inset-0 bg-[#261815]/60 z-0"></div>
+                    <div class="relative z-10 flex flex-col items-center justify-center">
+                        <h3 class="font-oswald text-h3-m font-bold mb-4 text-[#ffffff]">Кейтеринг-зона</h3>
+                        <p class="text-p-sub text-[#ffffff]">Welcome-coffee, комплексний обід, фуршет, банкет, food-box, напої, персонал, сервірування.</p>
+                    </div>
                 </div>
-                <div class="bg-dark80 p-8 border border-white/10 rounded-2xl">
-                    <h3 class="font-oswald text-h3-m font-bold mb-4 text-accent">Зона відпочинку</h3>
-                    <p class="text-p-sub text-gray-300">Шатри, парасолі, столи, стільці, барні столи, текстиль, декор.</p>
+                <div class="relative overflow-hidden p-8 rounded-2xl border border-white/10 bg-cover bg-center bg-no-repeat flex flex-col items-center justify-center text-center min-h-[240px]" style="background-image: url('Block4_4.png');">
+                    <div class="absolute inset-0 bg-[#261815]/60 z-0"></div>
+                    <div class="relative z-10 flex flex-col items-center justify-center">
+                        <h3 class="font-oswald text-h3-m font-bold mb-4 text-[#ffffff]">Зона відпочинку</h3>
+                        <p class="text-p-sub text-[#ffffff]">Шатри, парасолі, столи, стільці, барні столи, текстиль, декор.</p>
+                    </div>
                 </div>
-                <div class="bg-dark80 p-8 border border-white/10 rounded-2xl">
-                    <h3 class="font-oswald text-h3-m font-bold mb-4 text-accent">Технічна зона</h3>
-                    <p class="text-p-sub text-gray-300">Генератори, підлогове покриття, біотуалети, рукомийники, кондиціонери або обігрівачі за потреби.</p>
+                <div class="relative overflow-hidden p-8 rounded-2xl border border-white/10 bg-cover bg-center bg-no-repeat flex flex-col items-center justify-center text-center min-h-[240px]" style="background-image: url('Block4_5.png');">
+                    <div class="absolute inset-0 bg-[#261815]/60 z-0"></div>
+                    <div class="relative z-10 flex flex-col items-center justify-center">
+                        <h3 class="font-oswald text-h3-m font-bold mb-4 text-[#ffffff]">Технічна зона</h3>
+                        <p class="text-p-sub text-[#ffffff]">Генератори, підлогове покриття, біотуалети, рукомийники, кондиціонери або обігрівачі за потреби.</p>
+                    </div>
                 </div>
-                <div class="bg-dark80 p-8 border border-white/10 rounded-2xl">
-                    <h3 class="font-oswald text-h3-m font-bold mb-4 text-accent">Брендинг-зона</h3>
-                    <p class="text-p-sub text-gray-300">Фотозона, промопродукція, брендовані елементи, прапори, навігаційні таблички.</p>
+                <div class="relative overflow-hidden p-8 rounded-2xl border border-white/10 bg-cover bg-center bg-no-repeat flex flex-col items-center justify-center text-center min-h-[240px]" style="background-image: url('Block4_6.png');">
+                    <div class="absolute inset-0 bg-[#261815]/60 z-0"></div>
+                    <div class="relative z-10 flex flex-col items-center justify-center">
+                        <h3 class="font-oswald text-h3-m font-bold mb-4 text-[#ffffff]">Брендинг-зона</h3>
+                        <p class="text-p-sub text-[#ffffff]">Фотозона, промопродукція, брендовані елементи, прапори, навігаційні таблички.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- БЛОК 5: Кейтеринг -->
-    <section class="py-20 bg-[#ffffff] mb-[60px]">
+    <section class="pt-[60px] pb-[60px] bg-[#ffffff]">
         <div class="container mx-auto px-4 max-w-4xl">
-            <div class="text-center mb-12">
-                <h2 class="font-oswald text-h2-m md:text-h2 font-bold mb-4 text-dark">Кейтеринг, який витримує польові умови</h2>
-                <p class="text-p-main text-dark80">Ми працюємо з подіями, де немає готової кухні, ресторанного залу й міської інфраструктури. Тому заздалегідь продумуємо логістику, подачу, персонал і комфорт гостей.</p>
+            <div class="text-center flex flex-col items-center justify-center mb-12">
+                <h2 class="font-oswald text-h2-m md:text-h2 font-bold mb-4 text-[#261815]">Кейтеринг, який витримує польові умови</h2>
+                <p class="text-p-main text-[#261815]">Ми працюємо з подіями, де немає готової кухні, ресторанного залу й міської інфраструктури. Тому заздалегідь продумуємо логістику, подачу, персонал і комфорт гостей.</p>
             </div>
 
-            <div class="space-y-4">
-                <!-- Accordion Items -->
-                <details class="group bg-white rounded-2xl shadow-sm border border-gray-100">
-                    <summary class="font-oswald text-h3-m font-bold p-5 cursor-pointer flex justify-between items-center group-open:text-accent text-dark">
-                        Welcome-coffee <span class="group-open:rotate-180 transition-transform">▼</span>
-                    </summary>
-                    <div class="p-5 pt-0 text-p-sub text-dark80 border-t">Для зустрічі гостей перед офіційною частиною.</div>
-                </details>
-                <details class="group bg-white rounded-2xl shadow-sm border border-gray-100">
-                    <summary class="font-oswald text-h3-m font-bold p-5 cursor-pointer flex justify-between items-center group-open:text-accent text-dark">
-                        Кава-брейк <span class="group-open:rotate-180 transition-transform">▼</span>
-                    </summary>
-                    <div class="p-5 pt-0 text-p-sub text-dark80 border-t">Для перерв між презентаціями, демонстраціями техніки або виступами.</div>
-                </details>
-                <details class="group bg-white rounded-2xl shadow-sm border border-gray-100">
-                    <summary class="font-oswald text-h3-m font-bold p-5 cursor-pointer flex justify-between items-center group-open:text-accent text-dark">
-                        Комплексний обід <span class="group-open:rotate-180 transition-transform">▼</span>
-                    </summary>
-                    <div class="p-5 pt-0 text-p-sub text-dark80 border-t">Для великих груп гостей, команди, дилерів, партнерів.</div>
-                </details>
-                <details class="group bg-white rounded-2xl shadow-sm border border-gray-100">
-                    <summary class="font-oswald text-h3-m font-bold p-5 cursor-pointer flex justify-between items-center group-open:text-accent text-dark">
-                        Фуршет <span class="group-open:rotate-180 transition-transform">▼</span>
-                    </summary>
-                    <div class="p-5 pt-0 text-p-sub text-dark80 border-t">Для неформальної частини, нетворкінгу, спілкування з клієнтами.</div>
-                </details>
-                <details class="group bg-white rounded-2xl shadow-sm border border-gray-100">
-                    <summary class="font-oswald text-h3-m font-bold p-5 cursor-pointer flex justify-between items-center group-open:text-accent text-dark">
-                        Банкет <span class="group-open:rotate-180 transition-transform">▼</span>
-                    </summary>
-                    <div class="p-5 pt-0 text-p-sub text-dark80 border-t">Для фінальної частини події або корпоративного формату.</div>
-                </details>
-                <details class="group bg-white rounded-2xl shadow-sm border border-gray-100">
-                    <summary class="font-oswald text-h3-m font-bold p-5 cursor-pointer flex justify-between items-center group-open:text-accent text-dark">
-                        Food-box <span class="group-open:rotate-180 transition-transform">▼</span>
-                    </summary>
-                    <div class="p-5 pt-0 text-p-sub text-dark80 border-t">Для зручної індивідуальної подачі, коли важлива швидкість, гігієна та контроль потоку людей.</div>
-                </details>
+            <div class="flex flex-col gap-[10px]">
+                <!-- Row 1 -->
+                <div class="flex flex-row gap-[10px]">
+                    <details class="group bg-[#F2C364] rounded-2xl border border-gray-100 flex-1">
+                        <summary class="font-oswald text-h3-m font-bold p-5 cursor-pointer flex justify-between items-center text-[#261815]">
+                            Welcome-coffee <span class="group-open:rotate-180 transition-transform text-[#261815]">▼</span>
+                        </summary>
+                        <div class="p-5 pt-0 text-p-sub text-[#261815] border-t border-[#261815]/20">Для зустрічі гостей перед офіційною частиною.</div>
+                    </details>
+                    <details class="group bg-[#F2C364] rounded-2xl border border-gray-100 flex-1">
+                        <summary class="font-oswald text-h3-m font-bold p-5 cursor-pointer flex justify-between items-center text-[#261815]">
+                            Кава-брейк <span class="group-open:rotate-180 transition-transform text-[#261815]">▼</span>
+                        </summary>
+                        <div class="p-5 pt-0 text-p-sub text-[#261815] border-t border-[#261815]/20">Для перерв між презентаціями, демонстраціями техніки або виступами.</div>
+                    </details>
+                </div>
+                <!-- Row 2 -->
+                <div class="flex flex-row gap-[10px]">
+                    <details class="group bg-[#F2C364] rounded-2xl border border-gray-100 flex-1">
+                        <summary class="font-oswald text-h3-m font-bold p-5 cursor-pointer flex justify-between items-center text-[#261815]">
+                            Комплексний обід <span class="group-open:rotate-180 transition-transform text-[#261815]">▼</span>
+                        </summary>
+                        <div class="p-5 pt-0 text-p-sub text-[#261815] border-t border-[#261815]/20">Для великих груп гостей, команди, дилерів, партнерів.</div>
+                    </details>
+                    <details class="group bg-[#F2C364] rounded-2xl border border-gray-100 flex-1">
+                        <summary class="font-oswald text-h3-m font-bold p-5 cursor-pointer flex justify-between items-center text-[#261815]">
+                            Фуршет <span class="group-open:rotate-180 transition-transform text-[#261815]">▼</span>
+                        </summary>
+                        <div class="p-5 pt-0 text-p-sub text-[#261815] border-t border-[#261815]/20">Для неформальної частини, нетворкінгу, спілкування з клієнтами.</div>
+                    </details>
+                </div>
+                <!-- Row 3 -->
+                <div class="flex flex-row gap-[10px]">
+                    <details class="group bg-[#F2C364] rounded-2xl border border-gray-100 flex-1">
+                        <summary class="font-oswald text-h3-m font-bold p-5 cursor-pointer flex justify-between items-center text-[#261815]">
+                            Банкет <span class="group-open:rotate-180 transition-transform text-[#261815]">▼</span>
+                        </summary>
+                        <div class="p-5 pt-0 text-p-sub text-[#261815] border-t border-[#261815]/20">Для фінальної частини події або корпоративного формату.</div>
+                    </details>
+                    <details class="group bg-[#F2C364] rounded-2xl border border-gray-100 flex-1">
+                        <summary class="font-oswald text-h3-m font-bold p-5 cursor-pointer flex justify-between items-center text-[#261815]">
+                            Food-box <span class="group-open:rotate-180 transition-transform text-[#261815]">▼</span>
+                        </summary>
+                        <div class="p-5 pt-0 text-p-sub text-[#261815] border-t border-[#261815]/20">Для зручної індивідуальної подачі, коли важлива швидкість, гігієна та контроль потоку людей.</div>
+                    </details>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- БЛОК 6: Пакети послуг -->
-    <section class="py-20 bg-[#ffffff] mb-[60px]">
+    <section class="pt-[60px] pb-[60px] bg-[#ffffff]">
         <div class="container mx-auto px-4">
-            <h2 class="font-oswald text-h2-m md:text-h2 font-bold mb-12 text-center text-dark">Три формати організації Дня поля</h2>
+            <h2 class="font-oswald text-h2-m md:text-h2 font-bold mb-12 text-center text-[#261815]">Три формати організації Дня поля</h2>
             
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-[10px]">
                 <!-- Пакет 1 -->
-                <div class="bg-graybg border border-gray-200 rounded-2xl p-8 flex flex-col h-full">
-                    <h3 class="font-oswald text-h3-m font-bold mb-4 text-dark">Пакет 1 — Стандарт</h3>
-                    <p class="text-p-sub text-dark80 mb-6 flex-grow">Для невеликих агроподій, презентацій, зустрічей із партнерами або дилерами.</p>
-                    <details class="group mb-8">
-                        <summary class="font-bold text-accent cursor-pointer mb-2 list-none flex items-center">
-                            Що може входити <span class="ml-2 group-open:rotate-180 transition-transform">▼</span>
+                <div class="bg-[#ffffff] border-2 border-[#261815] text-[#261815] rounded-2xl p-8 flex flex-col items-center justify-center text-center h-full">
+                    <h3 class="font-oswald text-h3-m font-bold mb-4 text-[#261815]">Пакет 1 — Стандарт</h3>
+                    <p class="text-p-sub text-[#261815] mb-6 flex-grow">Для невеликих агроподій, презентацій, зустрічей із партнерами або дилерами.</p>
+                    <details class="group w-full mb-8">
+                        <summary class="w-full font-bold cursor-pointer list-none flex items-center justify-between p-[10px] text-[#261815]">
+                            <span>Що може входити</span>
+                            <span class="group-open:rotate-180 transition-transform text-[#261815]">▼</span>
                         </summary>
-                        <ul class="list-disc pl-5 text-p-sub text-dark80 space-y-1">
-                            <li>welcome-coffee;</li>
-                            <li>фуршет або обід;</li>
-                            <li>базові столи та стільці;</li>
-                            <li>шатер 3×3;</li>
-                            <li>персонал для обслуговування;</li>
-                            <li>базове сервірування.</li>
+                        <ul class="space-y-1 text-left">
+                            <li class="flex items-start gap-2"><img src="marker.png" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0"><span class="text-p-sub text-[#261815]">welcome-coffee;</span></li>
+                            <li class="flex items-start gap-2"><img src="marker.png" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0"><span class="text-p-sub text-[#261815]">фуршет або обід;</span></li>
+                            <li class="flex items-start gap-2"><img src="marker.png" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0"><span class="text-p-sub text-[#261815]">базові столи та стільці;</span></li>
+                            <li class="flex items-start gap-2"><img src="marker.png" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0"><span class="text-p-sub text-[#261815]">шатер 3×3;</span></li>
+                            <li class="flex items-start gap-2"><img src="marker.png" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0"><span class="text-p-sub text-[#261815]">персонал для обслуговування;</span></li>
+                            <li class="flex items-start gap-2"><img src="marker.png" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0"><span class="text-p-sub text-[#261815]">базове сервірування.</span></li>
                         </ul>
                     </details>
-                    <button onclick="openModal('Пакет Стандарт')" class="w-full bg-dark text-white hover:bg-dark80 font-bold py-4 rounded-2xl uppercase transition-colors">
+                    <button onclick="openModal('Пакет Стандарт')" class="w-full bg-dark text-white hover:bg-dark80 font-bold py-4 rounded-2xl transition-colors">
                         Прорахувати Стандартний пакет
                     </button>
                 </div>
 
                 <!-- Пакет 2 -->
-                <div class="bg-dark text-white border-2 border-accent rounded-2xl p-8 flex flex-col h-full relative transform md:-translate-y-4 shadow-xl">
-                    <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-accent text-dark font-bold px-4 py-1 rounded-full text-sm">ПОПУЛЯРНИЙ</div>
-                    <h3 class="font-oswald text-h3-m font-bold mb-4 text-accent">Пакет 2 — Оптимальний</h3>
-                    <p class="text-p-sub text-gray-300 mb-6 flex-grow">Для повноцінного Дня поля з презентаційною частиною, харчуванням і комфортною зоною для гостей.</p>
-                    <details class="group mb-8">
-                        <summary class="font-bold text-accent cursor-pointer mb-2 list-none flex items-center">
-                            Що може входити <span class="ml-2 group-open:rotate-180 transition-transform">▼</span>
+                <div class="bg-[#ffffff] border-2 border-[#261815] text-[#261815] rounded-2xl p-8 flex flex-col items-center justify-center text-center h-full relative shadow-xl">
+                    <h3 class="font-oswald text-h3-m font-bold mb-4 text-[#261815]">Пакет 2 — Оптимальний</h3>
+                    <p class="text-p-sub text-[#261815] mb-6 flex-grow">Для повноцінного Дня поля з презентаційною частиною, харчуванням і комфортною зоною для гостей.</p>
+                    <details class="group w-full mb-8">
+                        <summary class="w-full font-bold cursor-pointer list-none flex items-center justify-between p-[10px] text-[#261815]">
+                            <span>Що може входити</span>
+                            <span class="group-open:rotate-180 transition-transform text-[#261815]">▼</span>
                         </summary>
-                        <ul class="list-disc pl-5 text-p-sub text-gray-300 space-y-1">
-                            <li>welcome-coffee;</li>
-                            <li>банкет / фуршет;</li>
-                            <li>шатер або накриття;</li>
-                            <li>підлогове покриття;</li>
-                            <li>меблі;</li>
-                            <li>парасолі від сонця;</li>
-                            <li>звук / мікрофони;</li>
-                            <li>реєстрація гостей;</li>
-                            <li>персонал;</li>
-                            <li>базовий технічний супровід.</li>
+                        <ul class="space-y-1 text-left">
+                            <li class="flex items-start gap-2"><img src="marker.png" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0"><span class="text-p-sub text-[#261815]">welcome-coffee;</span></li>
+                            <li class="flex items-start gap-2"><img src="marker.png" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0"><span class="text-p-sub text-[#261815]">банкет / фуршет;</span></li>
+                            <li class="flex items-start gap-2"><img src="marker.png" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0"><span class="text-p-sub text-[#261815]">шатер або накриття;</span></li>
+                            <li class="flex items-start gap-2"><img src="marker.png" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0"><span class="text-p-sub text-[#261815]">підлогове покриття;</span></li>
+                            <li class="flex items-start gap-2"><img src="marker.png" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0"><span class="text-p-sub text-[#261815]">меблі;</span></li>
+                            <li class="flex items-start gap-2"><img src="marker.png" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0"><span class="text-p-sub text-[#261815]">парасолі від сонця;</span></li>
+                            <li class="flex items-start gap-2"><img src="marker.png" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0"><span class="text-p-sub text-[#261815]">звук / мікрофони;</span></li>
+                            <li class="flex items-start gap-2"><img src="marker.png" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0"><span class="text-p-sub text-[#261815]">реєстрація гостей;</span></li>
+                            <li class="flex items-start gap-2"><img src="marker.png" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0"><span class="text-p-sub text-[#261815]">персонал;</span></li>
+                            <li class="flex items-start gap-2"><img src="marker.png" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0"><span class="text-p-sub text-[#261815]">базовий технічний супровід.</span></li>
                         </ul>
                     </details>
-                    <button onclick="openModal('Пакет Оптимальний')" class="w-full bg-accent text-dark hover:bg-[#e0b252] font-bold py-4 rounded-2xl uppercase transition-colors">
+                    <button onclick="openModal('Пакет Оптимальний')" class="w-full bg-dark text-white hover:bg-dark80 font-bold py-4 rounded-2xl transition-colors">
                         Прорахувати Оптимальний пакет
                     </button>
                 </div>
 
                 <!-- Пакет 3 -->
-                <div class="bg-graybg border border-gray-200 rounded-2xl p-8 flex flex-col h-full">
-                    <h3 class="font-oswald text-h3-m font-bold mb-4 text-dark">Пакет 3 — VIP / Під ключ</h3>
-                    <p class="text-p-sub text-dark80 mb-6 flex-grow">Для великих агроподій, презентацій бренду, дилерських зустрічей, запусків продуктів і масштабних Днів поля.</p>
-                    <details class="group mb-8">
-                        <summary class="font-bold text-accent cursor-pointer mb-2 list-none flex items-center">
-                            Що може входити <span class="ml-2 group-open:rotate-180 transition-transform">▼</span>
+                <div class="bg-[#261815] border-2 border-[#261815] text-[#ffffff] rounded-2xl p-8 flex flex-col items-center justify-center text-center h-full">
+                    <h3 class="font-oswald text-h3-m font-bold mb-4 text-[#ffffff]">Пакет 3 — VIP / Під ключ</h3>
+                    <p class="text-p-sub text-[#ffffff] mb-6 flex-grow">Для великих агроподій, презентацій бренду, дилерських зустрічей, запусків продуктів і масштабних Днів поля.</p>
+                    <details class="group w-full mb-8">
+                        <summary class="w-full font-bold cursor-pointer list-none flex items-center justify-between p-[10px] text-[#ffffff]">
+                            <span>Що може входити</span>
+                            <span class="group-open:rotate-180 transition-transform text-[#ffffff]">▼</span>
                         </summary>
-                        <ul class="list-disc pl-5 text-p-sub text-dark80 space-y-1">
-                            <li>повне облаштування локації;</li>
-                            <li>електронна реєстрація;</li>
-                            <li>сцена;</li>
-                            <li>світло;</li>
-                            <li>LED-екран або проєктор;</li>
-                            <li>ведучий;</li>
-                            <li>розважальна програма;</li>
-                            <li>фото / відео;</li>
-                            <li>фотозона;</li>
-                            <li>декор;</li>
-                            <li>біотуалети;</li>
-                            <li>рукомийники;</li>
-                            <li>кейтеринг;</li>
-                            <li>персонал;</li>
-                            <li>повний технічний супровід.</li>
+                        <ul class="space-y-1 text-left">
+                            <li class="flex items-start gap-2"><img src="marker.png" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0"><span class="text-p-sub text-[#ffffff]">повне облаштування локації;</span></li>
+                            <li class="flex items-start gap-2"><img src="marker.png" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0"><span class="text-p-sub text-[#ffffff]">електронна реєстрація;</span></li>
+                            <li class="flex items-start gap-2"><img src="marker.png" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0"><span class="text-p-sub text-[#ffffff]">сцена; світло;</span></li>
+                            <li class="flex items-start gap-2"><img src="marker.png" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0"><span class="text-p-sub text-[#ffffff]">LED-екран або проєктор;</span></li>
+                            <li class="flex items-start gap-2"><img src="marker.png" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0"><span class="text-p-sub text-[#ffffff]">ведучий; розважальна програма;</span></li>
+                            <li class="flex items-start gap-2"><img src="marker.png" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0"><span class="text-p-sub text-[#ffffff]">фото / відео; фотозона; декор;</span></li>
+                            <li class="flex items-start gap-2"><img src="marker.png" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0"><span class="text-p-sub text-[#ffffff]">біотуалети; рукомийники;</span></li>
+                            <li class="flex items-start gap-2"><img src="marker.png" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0"><span class="text-p-sub text-[#ffffff]">кейтеринг; персонал;</span></li>
+                            <li class="flex items-start gap-2"><img src="marker.png" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0"><span class="text-p-sub text-[#ffffff]">повний технічний супровід.</span></li>
                         </ul>
                     </details>
-                    <button onclick="openModal('Пакет VIP')" class="w-full bg-dark text-white hover:bg-dark80 font-bold py-4 rounded-2xl uppercase transition-colors">
+                    <button onclick="openModal('Пакет VIP')" class="w-full bg-[#F2C364] text-[#261815] hover:bg-[#e0b252] font-bold py-4 rounded-2xl transition-colors">
                         Отримати VIP-прорахунок
                     </button>
                 </div>
@@ -376,134 +410,167 @@
     </section>
 
     <!-- БЛОК 7: Ми знаємо, як працюють агроподії -->
-    <section class="py-20 bg-[#ffffff] mb-[60px]">
+    <section class="pt-[60px] pb-[60px] bg-[#ffffff]">
         <div class="container mx-auto px-4">
-            <h2 class="font-oswald text-h2-m md:text-h2 font-bold mb-12 text-center text-dark">Ми знаємо, як працюють агроподії</h2>
+            <h2 class="font-oswald text-h2-m md:text-h2 font-bold mb-12 text-center text-[#261815]">Ми знаємо, як працюють агроподії</h2>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
-                    <h3 class="font-oswald text-h3-m font-bold text-accent mb-3">1000+ Днів поля</h3>
-                    <p class="text-p-sub text-dark80">Маємо досвід саме в польових заходах, а не тільки в ресторанах чи банкетних залах.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[10px]">
+                <div class="p-8 rounded-2xl shadow-sm border border-white/10 flex flex-col items-center justify-center text-center" style="background-color: rgba(38, 24, 21, 0.8);">
+                    <h3 class="font-oswald text-h3-m font-bold mb-3 text-[#ffffff]">1000+ Днів поля</h3>
+                    <p class="text-p-sub text-[#ffffff]">Маємо досвід саме в польових заходах, а не тільки в ресторанах чи банкетних залах.</p>
                 </div>
-                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
-                    <h3 class="font-oswald text-h3-m font-bold text-accent mb-3">100+ агрокомпаній</h3>
-                    <p class="text-p-sub text-dark80">Працювали з аграрним бізнесом і розуміємо специфіку таких подій.</p>
+                <div class="p-8 rounded-2xl shadow-sm border border-white/10 flex flex-col items-center justify-center text-center" style="background-color: rgba(38, 24, 21, 0.8);">
+                    <h3 class="font-oswald text-h3-m font-bold mb-3 text-[#ffffff]">100+ агрокомпаній</h3>
+                    <p class="text-p-sub text-[#ffffff]">Працювали з аграрним бізнесом і розуміємо специфіку таких подій.</p>
                 </div>
-                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
-                    <h3 class="font-oswald text-h3-m font-bold text-accent mb-3">2 власні ресторани</h3>
-                    <p class="text-p-sub text-dark80">Кейтеринг базується на власній кухні, команді та виробництві.</p>
+                <div class="p-8 rounded-2xl shadow-sm border border-white/10 flex flex-col items-center justify-center text-center" style="background-color: rgba(38, 24, 21, 0.8);">
+                    <h3 class="font-oswald text-h3-m font-bold mb-3 text-[#ffffff]">2 власні ресторани</h3>
+                    <p class="text-p-sub text-[#ffffff]">Кейтеринг базується на власній кухні, команді та виробництві.</p>
                 </div>
-                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
-                    <h3 class="font-oswald text-h3-m font-bold text-accent mb-3">100 співробітників</h3>
-                    <p class="text-p-sub text-dark80">У команді менеджери, адміністратори, кухарі, офіціанти й технічний персонал.</p>
+                <div class="p-8 rounded-2xl shadow-sm border border-white/10 flex flex-col items-center justify-center text-center" style="background-color: rgba(38, 24, 21, 0.8);">
+                    <h3 class="font-oswald text-h3-m font-bold mb-3 text-[#ffffff]">100 співробітників</h3>
+                    <p class="text-p-sub text-[#ffffff]">У команді менеджери, адміністратори, кухарі, офіціанти й технічний персонал.</p>
                 </div>
-                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
-                    <h3 class="font-oswald text-h3-m font-bold text-accent mb-3">Один підрядник</h3>
-                    <p class="text-p-sub text-dark80">Не потрібно окремо шукати їжу, меблі, шатри, техніку, персонал і організаторів.</p>
+                <div class="p-8 rounded-2xl shadow-sm border border-white/10 flex flex-col items-center justify-center text-center" style="background-color: rgba(38, 24, 21, 0.8);">
+                    <h3 class="font-oswald text-h3-m font-bold mb-3 text-[#ffffff]">Один підрядник</h3>
+                    <p class="text-p-sub text-[#ffffff]">Не потрібно окремо шукати їжу, меблі, шатри, техніку, персонал і організаторів.</p>
                 </div>
-                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
-                    <h3 class="font-oswald text-h3-m font-bold text-accent mb-3">Прозорий кошторис</h3>
-                    <p class="text-p-sub text-dark80">Один кошторис, один рахунок, один пакет бухгалтерських документів.</p>
+                <div class="p-8 rounded-2xl shadow-sm border border-white/10 flex flex-col items-center justify-center text-center" style="background-color: rgba(38, 24, 21, 0.8);">
+                    <h3 class="font-oswald text-h3-m font-bold mb-3 text-[#ffffff]">Прозорий кошторис</h3>
+                    <p class="text-p-sub text-[#ffffff]">Один кошторис, один рахунок, один пакет бухгалтерських документів.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- БЛОК 8: Масштаби подій -->
-    <section class="py-20 bg-[#ffffff] mb-[60px]">
+    <section class="pt-[60px] pb-[60px] bg-[#ffffff]">
         <div class="container mx-auto px-4 max-w-4xl">
-            <details class="group bg-graybg rounded-2xl shadow-sm border border-gray-200 cursor-pointer">
-                <summary class="font-oswald text-h2-m font-bold p-8 flex justify-between items-center group-open:text-accent text-dark transition-colors rounded-2xl">
+            <details class="group bg-[#ffffff] border-2 border-[#261815] rounded-2xl shadow-sm cursor-pointer mb-8 overflow-hidden">
+                <summary class="font-oswald text-h2-m font-bold p-8 flex justify-between items-center text-[#261815] transition-colors rounded-2xl">
                     Організовуємо події для агробізнесу різного масштабу
-                    <span class="text-3xl group-open:rotate-180 transition-transform ml-4 text-accent">▼</span>
+                    <span class="text-3xl group-open:rotate-180 transition-transform ml-4 text-[#261815]">▼</span>
                 </summary>
-                <div class="p-8 pt-0 text-p-main text-dark80 border-t border-gray-200">
-                    <ul class="list-disc pl-5 space-y-2 mt-6">
-                        <li>день поля;</li>
-                        <li>презентація насіння, добрив, ЗЗР, техніки;</li>
-                        <li>дилерська зустріч;</li>
-                        <li>навчальний семінар для фермерів;</li>
-                        <li>конференція агрокомпанії;</li>
-                        <li>корпоратив для агробізнесу;</li>
-                        <li>демонстрація техніки;</li>
-                        <li>партнерська подія;</li>
-                        <li>відкриття сезону;</li>
-                        <li>закриття сезону;</li>
-                        <li>виїзна зустріч команди або клієнтів.</li>
+                <div class="p-8 pt-0 border-t border-[#261815]/20">
+                    <ul class="space-y-2 mt-6">
+                        <li class="flex items-start gap-2"><img src="marker.png" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0"><span class="text-[#261815] text-p-sub">день поля;</span></li>
+                        <li class="flex items-start gap-2"><img src="marker.png" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0"><span class="text-[#261815] text-p-sub">презентація насіння, добрив, ЗЗР, техніки;</span></li>
+                        <li class="flex items-start gap-2"><img src="marker.png" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0"><span class="text-[#261815] text-p-sub">дилерська зустріч;</span></li>
+                        <li class="flex items-start gap-2"><img src="marker.png" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0"><span class="text-[#261815] text-p-sub">навчальний семінар для фермерів;</span></li>
+                        <li class="flex items-start gap-2"><img src="marker.png" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0"><span class="text-[#261815] text-p-sub">конференція агрокомпанії;</span></li>
+                        <li class="flex items-start gap-2"><img src="marker.png" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0"><span class="text-[#261815] text-p-sub">корпоратив для агробізнесу;</span></li>
+                        <li class="flex items-start gap-2"><img src="marker.png" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0"><span class="text-[#261815] text-p-sub">демонстрація техніки;</span></li>
+                        <li class="flex items-start gap-2"><img src="marker.png" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0"><span class="text-[#261815] text-p-sub">партнерська подія;</span></li>
+                        <li class="flex items-start gap-2"><img src="marker.png" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0"><span class="text-[#261815] text-p-sub">відкриття сезону;</span></li>
+                        <li class="flex items-start gap-2"><img src="marker.png" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0"><span class="text-[#261815] text-p-sub">закриття сезону;</span></li>
+                        <li class="flex items-start gap-2"><img src="marker.png" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0"><span class="text-[#261815] text-p-sub">виїзна зустріч команди або клієнтів.</span></li>
                     </ul>
                 </div>
             </details>
+            
+            <!-- Image Block -->
+            <div class="w-full p-[16px] mb-8">
+                <div class="w-full h-[400px] lg:h-[600px] bg-cover bg-center bg-no-repeat rounded-[40px] shadow-xl overflow-hidden" style="background-image: url('Block8.png');"></div>
+            </div>
         </div>
     </section>
 
     <!-- БЛОК 9: Процес -->
-    <section class="py-20 bg-[#ffffff] mb-[60px]">
+    <section class="pt-[60px] pb-[60px] bg-[#ffffff]">
         <div class="container mx-auto px-4 text-center">
-            <h2 class="font-oswald text-h2-m md:text-h2 font-bold mb-12 text-dark">Від заявки до готової події — зрозумілий процес</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12 text-left">
+            <h2 class="font-oswald text-h2-m md:text-h2 font-bold mb-12 text-[#261815]">Від заявки до готової події — зрозумілий процес</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[10px] mb-12 text-left">
                 <!-- 1 -->
-                <div class="relative pl-12 bg-dark80 p-6 rounded-2xl border border-white/10">
-                    <div class="absolute left-4 top-4 text-accent font-oswald text-[40px] font-bold leading-none opacity-50">1</div>
-                    <h3 class="font-oswald text-h3-m font-bold mb-2 text-white">Ви залишаєте заявку</h3>
-                    <p class="text-p-sub text-gray-400">Вказуєте дату, місто / локацію, кількість гостей і формат події.</p>
+                <div class="bg-dark80 p-6 rounded-2xl border border-white/10 flex flex-row items-center justify-center gap-4">
+                    <div class="text-accent font-oswald text-[40px] font-bold leading-none opacity-100 flex-shrink-0">1</div>
+                    <div class="flex-grow">
+                        <h3 class="font-oswald text-h3-m font-bold mb-2 text-[#ffffff]">Ви залишаєте заявку</h3>
+                        <p class="text-p-sub text-[#ffffff]">Вказуєте дату, місто / локацію, кількість гостей і формат події.</p>
+                    </div>
                 </div>
                 <!-- 2 -->
-                <div class="relative pl-12 bg-dark80 p-6 rounded-2xl border border-white/10">
-                    <div class="absolute left-4 top-4 text-accent font-oswald text-[40px] font-bold leading-none opacity-50">2</div>
-                    <h3 class="font-oswald text-h3-m font-bold mb-2 text-white">Ми збираємо технічне завдання</h3>
-                    <p class="text-p-sub text-gray-400">Уточнюємо активності, таймінг, формат харчування, обладнання, персонал, логістику.</p>
+                <div class="bg-dark80 p-6 rounded-2xl border border-white/10 flex flex-row items-center justify-center gap-4">
+                    <div class="text-accent font-oswald text-[40px] font-bold leading-none opacity-100 flex-shrink-0">2</div>
+                    <div class="flex-grow">
+                        <h3 class="font-oswald text-h3-m font-bold mb-2 text-[#ffffff]">Ми збираємо технічне завдання</h3>
+                        <p class="text-p-sub text-[#ffffff]">Уточнюємо активності, таймінг, формат харчування, обладнання, персонал, логістику.</p>
+                    </div>
                 </div>
                 <!-- 3 -->
-                <div class="relative pl-12 bg-dark80 p-6 rounded-2xl border border-white/10">
-                    <div class="absolute left-4 top-4 text-accent font-oswald text-[40px] font-bold leading-none opacity-50">3</div>
-                    <h3 class="font-oswald text-h3-m font-bold mb-2 text-white">Готуємо комерційну пропозицію</h3>
-                    <p class="text-p-sub text-gray-400">Формуємо попередній кошторис з урахуванням задач події.</p>
+                <div class="bg-dark80 p-6 rounded-2xl border border-white/10 flex flex-row items-center justify-center gap-4">
+                    <div class="text-accent font-oswald text-[40px] font-bold leading-none opacity-100 flex-shrink-0">3</div>
+                    <div class="flex-grow">
+                        <h3 class="font-oswald text-h3-m font-bold mb-2 text-[#ffffff]">Готуємо комерційну пропозицію</h3>
+                        <p class="text-p-sub text-[#ffffff]">Формуємо попередній кошторис з урахуванням задач події.</p>
+                    </div>
                 </div>
                 <!-- 4 -->
-                <div class="relative pl-12 bg-dark80 p-6 rounded-2xl border border-white/10">
-                    <div class="absolute left-4 top-4 text-accent font-oswald text-[40px] font-bold leading-none opacity-50">4</div>
-                    <h3 class="font-oswald text-h3-m font-bold mb-2 text-white">Коригуємо проєкт</h3>
-                    <p class="text-p-sub text-gray-400">Разом узгоджуємо меню, обладнання, наповнення зон і бюджет.</p>
+                <div class="bg-dark80 p-6 rounded-2xl border border-white/10 flex flex-row items-center justify-center gap-4">
+                    <div class="text-accent font-oswald text-[40px] font-bold leading-none opacity-100 flex-shrink-0">4</div>
+                    <div class="flex-grow">
+                        <h3 class="font-oswald text-h3-m font-bold mb-2 text-[#ffffff]">Коригуємо проєкт</h3>
+                        <p class="text-p-sub text-[#ffffff]">Разом узгоджуємо меню, обладнання, наповнення зон і бюджет.</p>
+                    </div>
                 </div>
                 <!-- 5 -->
-                <div class="relative pl-12 bg-dark80 p-6 rounded-2xl border border-white/10">
-                    <div class="absolute left-4 top-4 text-accent font-oswald text-[40px] font-bold leading-none opacity-50">5</div>
-                    <h3 class="font-oswald text-h3-m font-bold mb-2 text-white">Підписуємо договір</h3>
-                    <p class="text-p-sub text-gray-400">Фіксуємо фінальне ТЗ, кошторис і відповідальність сторін.</p>
+                <div class="bg-dark80 p-6 rounded-2xl border border-white/10 flex flex-row items-center justify-center gap-4">
+                    <div class="text-accent font-oswald text-[40px] font-bold leading-none opacity-100 flex-shrink-0">5</div>
+                    <div class="flex-grow">
+                        <h3 class="font-oswald text-h3-m font-bold mb-2 text-[#ffffff]">Підписуємо договір</h3>
+                        <p class="text-p-sub text-[#ffffff]">Фіксуємо фінальне ТЗ, кошторис і відповідальність сторін.</p>
+                    </div>
                 </div>
                 <!-- 6 -->
-                <div class="relative pl-12 bg-dark80 p-6 rounded-2xl border border-white/10">
-                    <div class="absolute left-4 top-4 text-accent font-oswald text-[40px] font-bold leading-none opacity-50">6</div>
-                    <h3 class="font-oswald text-h3-m font-bold mb-2 text-white">Реалізуємо подію</h3>
-                    <p class="text-p-sub text-gray-400">Готуємо локацію, зустрічаємо гостей, забезпечуємо харчування, технічний супровід , персонал і демонтаж.</p>
+                <div class="bg-dark80 p-6 rounded-2xl border border-white/10 flex flex-row items-center justify-center gap-4">
+                    <div class="text-accent font-oswald text-[40px] font-bold leading-none opacity-100 flex-shrink-0">6</div>
+                    <div class="flex-grow">
+                        <h3 class="font-oswald text-h3-m font-bold mb-2 text-[#ffffff]">Реалізуємо подію</h3>
+                        <p class="text-p-sub text-[#ffffff]">Готуємо локацію, зустрічаємо гостей, забезпечуємо харчування, технічний супровід , персонал і демонтаж.</p>
+                    </div>
                 </div>
             </div>
-            <button onclick="openModal('Залишити заявку (Кроки)')" class="bg-accent hover:bg-[#e0b252] text-dark font-oswald font-bold text-[20px] py-4 px-12 rounded-2xl transition-all shadow-lg transform hover:scale-105 uppercase">
+            <button onclick="openModal('Залишити заявку (Кроки)')" class="bg-accent hover:bg-[#e0b252] text-dark font-oswald font-bold text-[20px] py-4 px-12 rounded-2xl transition-all shadow-lg transform hover:scale-105">
                 Залишити заявку
             </button>
         </div>
     </section>
 
     <!-- БЛОК 10: Ваша команда займається гостями... -->
-    <section class="flex flex-col lg:flex-row min-h-[600px] items-center bg-[#ffffff] mb-[60px]">
-        <!-- Фото (з відступами та заокругленням) -->
-        <div class="w-full lg:w-1/2 p-4 lg:p-12">
-            <!-- Увага: переконайся, що файл Block10.jpg існує у твоїй папці або зміни його назву -->
-            <div class="w-full h-[400px] lg:h-[600px] bg-cover bg-center rounded-2xl shadow-xl" style="background-image: url('Block10.jpg');"></div>
-        </div>
-        
-        <!-- Текст -->
-        <div class="w-full lg:w-1/2 p-8 lg:pr-16 flex flex-col justify-center">
-            <h2 class="font-oswald text-h2-m md:text-h2 font-bold mb-6 text-dark">Ваша команда займається гостями й продуктом, а не побутовими питаннями.</h2>
-            <ul class="list-disc pl-5 space-y-3 text-p-main text-dark80 mb-8">
-                <li>гості вчасно зареєстровані;</li>
-                <li>є тінь, меблі, комфортна зона;</li>
-                <li>харчування подано без хаосу й черг;</li>
-                <li>презентаційна частина має звук, світло, екран;</li>
-                <li>локація виглядає організовано й брендовано;</li>
+    <section class="pt-[60px] pb-[60px] bg-[#ffffff]">
+        <div class="container mx-auto px-4 flex flex-col items-center">
+            <h2 class="font-oswald text-h2-m md:text-h2 font-bold mb-6 text-[#261815] text-center">Ваша команда займається гостями й продуктом, а не побутовими питаннями.</h2>
+            
+            <!-- Image Block -->
+            <div class="w-full p-[16px] mb-8">
+                <div class="w-full h-[400px] lg:h-[600px] bg-cover bg-center bg-no-repeat rounded-[40px] shadow-xl overflow-hidden" style="background-image: url('Block10.jpg');"></div>
+            </div>
+            
+            <ul class="w-full max-w-4xl space-y-3 mb-8">
+                <li class="flex items-center justify-center gap-2">
+                    <img src="marker.png" alt="" class="w-[8px] h-[8px] flex-shrink-0">
+                    <span class="font-oswald text-[16px] leading-[18px] text-[#261815] text-center">гості вчасно зареєстровані;</span>
+                </li>
+                <li class="flex items-center justify-center gap-2">
+                    <img src="marker.png" alt="" class="w-[8px] h-[8px] flex-shrink-0">
+                    <span class="font-oswald text-[16px] leading-[18px] text-[#261815] text-center">є тінь, меблі, комфортна зона;</span>
+                </li>
+                <li class="flex items-center justify-center gap-2">
+                    <img src="marker.png" alt="" class="w-[8px] h-[8px] flex-shrink-0">
+                    <span class="font-oswald text-[16px] leading-[18px] text-[#261815] text-center">харчування подано без хаосу й черг;</span>
+                </li>
+                <li class="flex items-center justify-center gap-2">
+                    <img src="marker.png" alt="" class="w-[8px] h-[8px] flex-shrink-0">
+                    <span class="font-oswald text-[16px] leading-[18px] text-[#261815] text-center">презентаційна частина має звук, світло, екран;</span>
+                </li>
+                <li class="flex items-center justify-center gap-2">
+                    <img src="marker.png" alt="" class="w-[8px] h-[8px] flex-shrink-0">
+                    <span class="font-oswald text-[16px] leading-[18px] text-[#261815] text-center">локація виглядає організовано й брендовано;</span>
+                </li>
             </ul>
-            <div class="bg-dark p-6 rounded-2xl shadow-lg border-l-4 border-accent">
-                <p class="font-bold text-p-main text-accent uppercase">
+            
+            <!-- Highlight Box -->
+            <div class="bg-dark p-6 rounded-2xl shadow-lg w-full max-w-4xl text-center">
+                <p class="font-bold text-p-main text-accent">
                     День поля має продавати ваш продукт і посилювати бренд, а не створювати організаційний стрес!
                 </p>
             </div>
@@ -511,14 +578,14 @@
     </section>
 
     <!-- БЛОК 11: Слайдер -->
-    <section class="py-20 bg-[#ffffff] mb-[60px]">
+    <section class="pt-[60px] pb-[60px] bg-[#ffffff]">
         <div class="container mx-auto px-4 text-center">
             <h2 class="font-oswald text-h2-m md:text-h2 font-bold mb-12 text-dark">Події, які ми вже реалізовували для агросектору:</h2>
             
             <!-- Swiper -->
             <div class="swiper mySwiper">
                 <div class="swiper-wrapper">
-                    <!-- Заглушки для 10 фото (rounded-16px задано в CSS) -->
+                    <!-- Заглушки для 10 фото -->
                     <div class="swiper-slide"><img src="Block11_1.png" alt="Кейс 1"></div>
                     <div class="swiper-slide"><img src="Block11_2.png" alt="Кейс 2"></div>
                     <div class="swiper-slide"><img src="Block11_4.png" alt="Кейс 3"></div>
@@ -538,66 +605,71 @@
     </section>
 
     <!-- БЛОК 12: FAQ -->
-    <section class="py-20 bg-[#ffffff] mb-[60px]">
+    <section class="pt-[60px] pb-[60px] bg-[#ffffff]">
         <div class="container mx-auto px-4 max-w-4xl">
             <h2 class="font-oswald text-h2-m md:text-h2 font-bold mb-12 text-center text-dark">Питання, які часто виникають перед організацією Дня поля</h2>
             
-            <div class="space-y-4">
-                <details class="group bg-white rounded-2xl shadow-sm border border-gray-100">
-                    <summary class="font-oswald text-h3-m font-bold p-6 cursor-pointer flex justify-between items-center group-open:text-accent text-dark">
-                        Ви працюєте по всій Україні? <span class="group-open:rotate-180 transition-transform">▼</span>
+            <div class="flex flex-col gap-[10px]">
+                <details class="group bg-[#ffffff] rounded-2xl shadow-sm border border-[#261815]">
+                    <summary class="font-oswald text-h3-m font-bold p-6 cursor-pointer flex justify-between items-center text-[#261815]">
+                        Ви працюєте по всій Україні? <span class="group-open:rotate-180 transition-transform text-[#261815]">▼</span>
                     </summary>
-                    <div class="p-6 pt-0 text-p-sub text-dark80 border-t">Так, готові розглянути організацію Дня поля по всій Україні.</div>
+                    <div class="p-6 pt-0 text-p-sub text-[#261815] border-t border-[#261815]/20">Так, готові розглянути організацію Дня поля по всій Україні.</div>
                 </details>
                 
-                <details class="group bg-white rounded-2xl shadow-sm border border-gray-100">
-                    <summary class="font-oswald text-h3-m font-bold p-6 cursor-pointer flex justify-between items-center group-open:text-accent text-dark">
-                        Чи можна замовити тільки кейтеринг без організації всієї події? <span class="group-open:rotate-180 transition-transform">▼</span>
+                <details class="group bg-[#ffffff] rounded-2xl shadow-sm border border-[#261815]">
+                    <summary class="font-oswald text-h3-m font-bold p-6 cursor-pointer flex justify-between items-center text-[#261815]">
+                        Чи можна замовити тільки кейтеринг без організації всієї події? <span class="group-open:rotate-180 transition-transform text-[#261815]">▼</span>
                     </summary>
-                    <div class="p-6 pt-0 text-p-sub text-dark80 border-t">Так, готові надати як повноцінну організацію вашої події, так і точково закрити питання ситих гостей.</div>
+                    <div class="p-6 pt-0 text-p-sub text-[#261815] border-t border-[#261815]/20">Так, готові надати як повноцінну організацію вашої події, так і точково закрити питання ситих гостей.</div>
                 </details>
                 
-                <details class="group bg-white rounded-2xl shadow-sm border border-gray-100">
-                    <summary class="font-oswald text-h3-m font-bold p-6 cursor-pointer flex justify-between items-center group-open:text-accent text-dark">
-                        Чи можете працювати на локації без інфраструктури? <span class="group-open:rotate-180 transition-transform">▼</span>
+                <details class="group bg-[#ffffff] rounded-2xl shadow-sm border border-[#261815]">
+                    <summary class="font-oswald text-h3-m font-bold p-6 cursor-pointer flex justify-between items-center text-[#261815]">
+                        Чи можете працювати на локації без інфраструктури? <span class="group-open:rotate-180 transition-transform text-[#261815]">▼</span>
                     </summary>
-                    <div class="p-6 pt-0 text-p-sub text-dark80 border-t">Так, готові працювати на відкритих майданчиках зі складною логістикою, погодою та відсутністю комунікацій.</div>
+                    <div class="p-6 pt-0 text-p-sub text-[#261815] border-t border-[#261815]/20">Так, готові працювати на відкритих майданчиках зі складною логістикою, погодою та відсутністю комунікацій.</div>
                 </details>
                 
-                <details class="group bg-white rounded-2xl shadow-sm border border-gray-100">
-                    <summary class="font-oswald text-h3-m font-bold p-6 cursor-pointer flex justify-between items-center group-open:text-accent text-dark">
-                        Чи допомагаєте з реєстрацією гостей? <span class="group-open:rotate-180 transition-transform">▼</span>
+                <details class="group bg-[#ffffff] rounded-2xl shadow-sm border border-[#261815]">
+                    <summary class="font-oswald text-h3-m font-bold p-6 cursor-pointer flex justify-between items-center text-[#261815]">
+                        Чи допомагаєте з реєстрацією гостей? <span class="group-open:rotate-180 transition-transform text-[#261815]">▼</span>
                     </summary>
-                    <div class="p-6 pt-0 text-p-sub text-dark80 border-t">Так, можемо надавати електронну реєстрацію та організаційну підтримку гостей.</div>
+                    <div class="p-6 pt-0 text-p-sub text-[#261815] border-t border-[#261815]/20">Так, можемо надавати електронну реєстрацію та організаційну підтримку гостей.</div>
                 </details>
 
-                <details class="group bg-white rounded-2xl shadow-sm border border-gray-100">
-                    <summary class="font-oswald text-h3-m font-bold p-6 cursor-pointer flex justify-between items-center group-open:text-accent text-dark">
-                        Чи можна отримати попередній кошторис? <span class="group-open:rotate-180 transition-transform">▼</span>
+                <details class="group bg-[#ffffff] rounded-2xl shadow-sm border border-[#261815]">
+                    <summary class="font-oswald text-h3-m font-bold p-6 cursor-pointer flex justify-between items-center text-[#261815]">
+                        Чи можна отримати попередній кошторис? <span class="group-open:rotate-180 transition-transform text-[#261815]">▼</span>
                     </summary>
-                    <div class="p-6 pt-0 text-p-sub text-dark80 border-t">Так, після ТЗ готується попередня комерційна пропозиція, далі проєкт коригується й фіналізується кошторис.</div>
+                    <div class="p-6 pt-0 text-p-sub text-[#261815] border-t border-[#261815]/20">Так, після ТЗ готується попередня комерційна пропозиція, далі проєкт коригується й фіналізується кошторис.</div>
                 </details>
 
-                <details class="group bg-white rounded-2xl shadow-sm border border-gray-100">
-                    <summary class="font-oswald text-h3-m font-bold p-6 cursor-pointer flex justify-between items-center group-open:text-accent text-dark">
-                        Як зрозуміти, що ви можете організувати нашу подію під наш бюджет? <span class="group-open:rotate-180 transition-transform">▼</span>
+                <details class="group bg-[#ffffff] rounded-2xl shadow-sm border border-[#261815]">
+                    <summary class="font-oswald text-h3-m font-bold p-6 cursor-pointer flex justify-between items-center text-[#261815]">
+                        Як зрозуміти, що ви можете організувати нашу подію під наш бюджет? <span class="group-open:rotate-180 transition-transform text-[#261815]">▼</span>
                     </summary>
-                    <div class="p-6 pt-0 text-p-sub text-dark80 border-t">Кожна подія унікальна, тому ви залишаєте заявку, з вами зв'язується наш менеджер та разом з вами підбирає умови під ваш формат та запит.</div>
+                    <div class="p-6 pt-0 text-p-sub text-[#261815] border-t border-[#261815]/20">Кожна подія унікальна, тому ви залишаєте заявку, з вами зв'язується наш менеджер та разом з вами підбирає умови під ваш формат та запит.</div>
                 </details>
             </div>
         </div>
     </section>
 
     <!-- БЛОК 13: CTA -->
-    <section class="py-24 bg-[#ffffff] text-dark text-center mb-[60px]">
-        <div class="container mx-auto px-4">
-            <h2 class="font-oswald text-h2-m md:text-h1 font-bold mb-6 text-dark">Плануєте День поля або агроподію?<br>Отримайте попередній прорахунок</h2>
-            <p class="text-p-main font-roboto mb-10 max-w-2xl mx-auto text-dark80">Залиште заявку — ми уточнимо формат, кількість гостей, локацію, задачі події та підготуємо пропозицію з меню, обладнанням і кошторисом.</p>
-            <button onclick="openModal('Фінальний CTA')" class="bg-dark hover:bg-dark80 text-white font-oswald font-bold text-[20px] py-5 px-12 rounded-2xl transition-all shadow-xl transform hover:scale-105 uppercase">
-                Отримати прорахунок
-            </button>
-        </div>
-    </section>
+    <div class="px-4 pb-[60px] bg-[#ffffff]">
+        <section class="relative overflow-hidden pt-[60px] pb-[60px] text-center rounded-[40px] bg-cover bg-center bg-no-repeat mx-auto max-w-7xl" style="background-image: url('Block13.png');">
+            <!-- Overlay -->
+            <div class="absolute inset-0 bg-[#261815]/40 z-0"></div>
+            <!-- Content -->
+            <div class="container mx-auto px-4 relative z-10">
+                <h2 class="font-oswald text-h2-m md:text-h1 font-bold mb-6 text-[#ffffff]">Плануєте День поля або агроподію?<br>Отримайте попередній прорахунок</h2>
+                <p class="text-p-main font-roboto mb-10 max-w-2xl mx-auto text-[#ffffff]">Залиште заявку — ми уточнимо формат, кількість гостей, локацію, задачі події та підготуємо пропозицію з меню, обладнанням і кошторисом.</p>
+                <button onclick="openModal('Фінальний CTA')" class="bg-[#ffffff] text-[#261815] font-oswald font-bold text-[20px] py-5 px-12 rounded-2xl transition-all shadow-xl transform hover:scale-105">
+                    Отримати прорахунок
+                </button>
+            </div>
+        </section>
+    </div>
 
     <!-- БЛОК 14: Футер/Контакти -->
     <footer class="bg-dark text-white py-12 border-t border-white/10">
@@ -610,7 +682,7 @@
             
             <div class="text-center">
                 <p class="text-gray-400 mb-4">Соціальні мережі</p>
-                <!-- Соціальна кнопка із заокругленням -->
+                <!-- Соціальна кнопка -->
                 <a href="https://instagram.com/mogorich_ivent" target="_blank" class="inline-block bg-white/10 hover:bg-accent hover:text-dark px-8 py-4 rounded-xl transition-colors font-bold uppercase tracking-wider">
                     Instagram (mogorich_ivent)
                 </a>
@@ -630,7 +702,6 @@
         <div class="absolute inset-0 bg-black/70 backdrop-blur-sm" onclick="closeModal()"></div>
         
         <!-- Modal Content -->
-        <!-- Заокруглена модалка -->
         <div class="bg-white rounded-2xl shadow-2xl w-full max-w-md mx-4 relative z-10 transform scale-95 transition-transform duration-300" id="modalBox">
             <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-500 hover:text-dark text-2xl font-bold">&times;</button>
             
@@ -641,7 +712,6 @@
                 <form id="leadForm" class="space-y-4">
                     <input type="hidden" id="formSubject" value="">
                     
-                    <!-- Заокруглені поля -->
                     <div>
                         <input type="text" id="userName" required placeholder="Ваше ім’я" class="w-full h-[55px] px-4 border border-gray-300 rounded-xl focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent font-roboto text-p-sub">
                     </div>
@@ -656,8 +726,7 @@
                         <textarea id="userRequest" rows="3" placeholder="Ваш запит (формат, дата, гості...)" class="w-full p-4 border border-gray-300 rounded-xl focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent font-roboto text-p-sub resize-none"></textarea>
                     </div>
                     
-                    <!-- Заокруглена кнопка -->
-                    <button type="submit" id="submitBtn" class="w-full bg-accent text-dark font-oswald font-bold text-[20px] h-[60px] rounded-xl uppercase transition-colors hover:bg-[#e0b252] flex justify-center items-center">
+                    <button type="submit" id="submitBtn" class="w-full bg-accent text-dark font-oswald font-bold text-[20px] h-[60px] rounded-xl transition-colors hover:bg-[#e0b252] flex justify-center items-center">
                         Відправити
                     </button>
                 </form>
@@ -775,14 +844,13 @@
                 // ВСТАВ СЮДИ URL ТЕЛЕГРАМ БОТА !
                 const TG_BOT_URL = 'YOUR_BOT_LINK';
 
-                // Якщо посилання на скрипт не замінено, імітуємо відправку для тесту
                 if(GOOGLE_SCRIPT_URL === 'YOUR_GOOGLE_WEBAPP_URL') {
                     console.log('Тестові дані:', data);
-                    await new Promise(r => setTimeout(r, 1000)); // затримка
+                    await new Promise(r => setTimeout(r, 1000));
                 } else {
                     await fetch(GOOGLE_SCRIPT_URL, {
                         method: 'POST',
-                        mode: 'no-cors', // Обов'язково для GAS
+                        mode: 'no-cors',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify(data)
                     });
