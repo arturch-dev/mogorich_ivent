@@ -494,7 +494,7 @@
                         <li class="flex items-start gap-2"><img src="marker.jpg" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0" loading="lazy" decoding="async"><span class="text-[#261815] text-p-sub">навчальний семінар для фермерів;</span></li>
                         <li class="flex items-start gap-2"><img src="marker.jpg" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0" loading="lazy" decoding="async"><span class="text-[#261815] text-p-sub">конференція агрокомпанії;</span></li>
                         <li class="flex items-start gap-2"><img src="marker.jpg" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0" loading="lazy" decoding="async"><span class="text-[#261815] text-p-sub">корпоратив для агробізнесу;</span></li>
-                        <li class="flex items-start gap-2"><img src="marker.jpg" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0" loading="lazy" decoding="async"><span class="text-[#261815] text-p-sub">демонстрація техніки;</span></li>
+                        <li class="flex items-start gap-2"><img src="marker.jpg" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0" loading="lazy" decoding="async"><span class="text-p-sub text-[#261815] text-p-sub">демонстрація техніки;</span></li>
                         <li class="flex items-start gap-2"><img src="marker.jpg" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0" loading="lazy" decoding="async"><span class="text-[#261815] text-p-sub">партнерська подія;</span></li>
                         <li class="flex items-start gap-2"><img src="marker.jpg" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0" loading="lazy" decoding="async"><span class="text-[#261815] text-p-sub">відкриття сезону;</span></li>
                         <li class="flex items-start gap-2"><img src="marker.jpg" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0" loading="lazy" decoding="async"><span class="text-[#261815] text-p-sub">закриття сезону;</span></li>
@@ -572,7 +572,7 @@
 
     <!-- БЛОК 10: Ваша команда займається гостями... -->
     <section class="pt-[60px] pb-[60px] bg-[#ffffff]">
-        <div class="container mx-auto px-4 flex flex-col items-center">
+        <div class="container mx-auto flex flex-col items-center px-4">
             <h2 class="font-oswald text-h2-m md:text-h2 font-bold mb-6 text-[#261815] text-center">Ваша команда займається гостями й продуктом, а не побутовими питаннями.</h2>
             
             <!-- Image Block (Lazy Load) -->
@@ -741,30 +741,42 @@
             <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-500 hover:text-dark text-2xl font-bold">&times;</button>
             
             <div class="p-8">
-                <h3 class="font-oswald text-h3-m font-bold text-dark mb-2 text-center">Залишіть заявку</h3>
-                <p class="text-gray-500 text-center mb-6 font-roboto text-p-sub">Заповніть форму, і ми підготуємо для вас прорахунок</p>
-                
-                <form id="leadForm" class="space-y-4">
-                    <input type="hidden" id="formSubject" value="">
+                <!-- Контейнер форми -->
+                <div id="formContainer">
+                    <h3 class="font-oswald text-h3-m font-bold text-dark mb-2 text-center">Залишіть заявку</h3>
+                    <p class="text-gray-500 text-center mb-6 font-roboto text-p-sub">Заповніть форму, і ми підготуємо для вас прорахунок</p>
                     
-                    <div>
-                        <input type="text" id="userName" required placeholder="Ваше ім’я" class="w-full h-[55px] px-4 border border-gray-300 rounded-xl focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent font-roboto text-p-sub">
-                    </div>
-                    <div>
-                        <input type="text" id="userCompany" placeholder="Назва вашої компанії" class="w-full h-[55px] px-4 border border-gray-300 rounded-xl focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent font-roboto text-p-sub">
-                    </div>
-                    <div>
-                        <input type="tel" id="userPhone" required class="w-full h-[55px] px-4 border border-gray-300 rounded-xl focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent font-roboto text-p-sub">
-                        <span id="phoneError" class="text-red-500 text-sm hidden mt-1 font-roboto text-p-sub">Невірний номер телефону</span>
-                    </div>
-                    <div>
-                        <textarea id="userRequest" rows="3" placeholder="Ваш запит (формат, дата, гості...)" class="w-full p-4 border border-gray-300 rounded-xl focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent font-roboto text-p-sub resize-none"></textarea>
-                    </div>
-                    
-                    <button type="submit" id="submitBtn" class="w-full bg-accent text-dark font-oswald font-bold text-[20px] h-[60px] rounded-xl transition-colors hover:bg-[#e0b252] flex justify-center items-center">
-                        Відправити
-                    </button>
-                </form>
+                    <form id="leadForm" class="space-y-4">
+                        <input type="hidden" id="formSubject" value="">
+                        
+                        <div>
+                            <input type="text" id="userName" required placeholder="Ваше ім’я" class="w-full h-[55px] px-4 border border-gray-300 rounded-xl focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent font-roboto text-p-sub">
+                        </div>
+                        <div>
+                            <input type="text" id="userCompany" placeholder="Назва вашої компанії" class="w-full h-[55px] px-4 border border-gray-300 rounded-xl focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent font-roboto text-p-sub">
+                        </div>
+                        <div>
+                            <input type="tel" id="userPhone" required class="w-full h-[55px] px-4 border border-gray-300 rounded-xl focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent font-roboto text-p-sub">
+                            <span id="phoneError" class="text-red-500 text-sm hidden mt-1 font-roboto text-p-sub">Невірний номер телефону</span>
+                        </div>
+                        <div>
+                            <textarea id="userRequest" rows="3" placeholder="Ваш запит (формат, дата, гості...)" class="w-full p-4 border border-gray-300 rounded-xl focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent font-roboto text-p-sub resize-none"></textarea>
+                        </div>
+                        
+                        <button type="submit" id="submitBtn" class="w-full bg-accent text-dark font-oswald font-bold text-[20px] h-[60px] rounded-xl transition-colors hover:bg-[#e0b252] flex justify-center items-center">
+                            Відправити
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Контейнер успіху (прихований за замовчуванням) -->
+                <div id="successContainer" class="hidden flex-col items-center justify-center text-center py-4">
+                    <h3 class="font-oswald text-[30px] leading-[32px] font-bold text-[#261815] mb-4">Дякуємо!</h3>
+                    <p class="font-roboto text-[16px] text-[#261815] mb-8">Заявка в обробці, ми звʼяжемось з вами найближчим часом.<br><br>Перейти на нашу сторінку інстаграм mogorich_ivent</p>
+                    <a href="https://www.instagram.com/mogorich_ivent?igsh=MWdza2o4YmgwaGIyMQ==" class="w-full bg-[#F2C364] text-[#261815] font-oswald font-bold text-[20px] h-[60px] rounded-xl transition-colors hover:bg-[#e0b252] flex justify-center items-center">
+                        Перейти до інстаграму
+                    </a>
+                </div>
             </div>
         </div>
     </div>
@@ -870,6 +882,13 @@
         
         function openModal(subject) {
             document.getElementById('formSubject').value = subject;
+            
+            // Скидаємо стан модалки до початкового
+            document.getElementById('formContainer').classList.remove('hidden');
+            document.getElementById('successContainer').classList.add('hidden');
+            document.getElementById('successContainer').classList.remove('flex');
+            document.getElementById('leadForm').reset();
+            
             modal.classList.remove('hidden');
             // Timeout для анімації
             setTimeout(() => {
@@ -939,11 +958,8 @@
             try {
                 // ВСТАВ СЮДИ URL ВІД GOOGLE APPS SCRIPT !
                 const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwRObGPkw-QL4UQu2aCl--GLKn8Gx98fia6uZY_RjskFQhtV7o5sNRCctEoyzsUHfUq/exec'; 
-                
-                // ВСТАВ СЮДИ URL ТЕЛЕГРАМ БОТА !
-                const TG_BOT_URL = 'https://www.instagram.com/mogorich_ivent?igsh=MWdza2o4YmgwaGIyMQ==';
 
-                if(GOOGLE_SCRIPT_URL === 'YOUR_GOOGLE_WEBAPP_URL') {
+                if(GOOGLE_SCRIPT_URL === 'https://script.google.com/macros/s/AKfycbwRObGPkw-QL4UQu2aCl--GLKn8Gx98fia6uZY_RjskFQhtV7o5sNRCctEoyzsUHfUq/execF') {
                     console.log('Тестові дані:', data);
                     await new Promise(r => setTimeout(r, 1000));
                 } else {
@@ -958,14 +974,10 @@
                 // FB Pixel Lead
                 if(typeof fbq !== 'undefined') fbq('track', 'Lead');
                 
-                // Редирект у бота
-                if(TG_BOT_URL !== 'YOUR_BOT_LINK') {
-                    window.location.href = TG_BOT_URL;
-                } else {
-                    alert('Заявка успішно відправлена! (Замініть посилання на бота)');
-                    closeModal();
-                    document.getElementById('leadForm').reset();
-                }
+                // Показуємо повідомлення про успіх замість редиректу
+                document.getElementById('formContainer').classList.add('hidden');
+                document.getElementById('successContainer').classList.remove('hidden');
+                document.getElementById('successContainer').classList.add('flex');
 
             } catch (error) {
                 console.error(error);
