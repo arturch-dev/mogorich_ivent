@@ -70,6 +70,9 @@
 
     <style>
         /* Custom Styles */
+        html { scroll-behavior: smooth; }
+        section { scroll-margin-top: 100px; } /* Щоб меню не перекривало заголовки при скролі */
+        
         body { color: #261815; background-color: #FFFFFF; }
         .iti { width: 100%; }
         
@@ -82,12 +85,30 @@
         .swiper-slide img { width: 100%; height: 400px; object-fit: cover; border-radius: 16px; }
         .swiper-button-next, .swiper-button-prev { color: #F2C364 !important; }
         .swiper-pagination-bullet-active { background: #F2C364 !important; }
+
+        /* Сховати скролбар для навігації на мобільних */
+        .scrollbar-hide::-webkit-scrollbar { display: none; }
+        .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
 </head>
 <body class="font-roboto antialiased text-dark">
 
+    <!-- Навігаційне меню (Sticky) -->
+    <div class="sticky top-[10px] z-40 px-4 w-full">
+        <nav class="bg-[#ffffff] shadow-xl rounded-[40px] mx-auto max-w-7xl px-6 py-3 flex items-center justify-start xl:justify-center gap-6 overflow-x-auto scrollbar-hide border border-gray-100">
+            <a href="#block1" class="text-[#261815] font-roboto font-medium text-[16px] whitespace-nowrap hover:opacity-70 transition-opacity">Головна</a>
+            <a href="#block2" class="text-[#261815] font-roboto font-medium text-[16px] whitespace-nowrap hover:opacity-70 transition-opacity">Проблеми та рішення</a>
+            <a href="#block6" class="text-[#261815] font-roboto font-medium text-[16px] whitespace-nowrap hover:opacity-70 transition-opacity">Пакети послуг</a>
+            <a href="#block7" class="text-[#261815] font-roboto font-medium text-[16px] whitespace-nowrap hover:opacity-70 transition-opacity">Чому ми?</a>
+            <a href="#block9" class="text-[#261815] font-roboto font-medium text-[16px] whitespace-nowrap hover:opacity-70 transition-opacity">Процес</a>
+            <a href="#block11" class="text-[#261815] font-roboto font-medium text-[16px] whitespace-nowrap hover:opacity-70 transition-opacity">Наші кейси</a>
+            <button onclick="openModal('Залишити заявку')" class="bg-[#261815] text-[#FFFFFF] font-oswald font-bold text-[16px] px-6 py-2.5 rounded-[40px] whitespace-nowrap transition-colors hover:bg-opacity-80 flex-shrink-0">Залишити заявку</button>
+        </nav>
+    </div>
+
     <!-- БЛОК 1: Hero -->
-    <section class="relative min-h-screen flex flex-col bg-[#ffffff]">
+    <section id="block1" class="relative min-h-screen flex flex-col bg-[#ffffff] -mt-[74px]">
+        <!-- Відступ -mt-[74px] компенсує висоту меню, щоб картинка була на весь екран -->
         <!-- Background Image -->
         <div class="absolute inset-0 z-0">
             <!-- ОПТИМІЗАЦІЯ: fetchpriority="high" для миттєвого відображення -->
@@ -95,9 +116,9 @@
         </div>
         
         <!-- Container with vertical layout and automatic space -->
-        <div class="container mx-auto px-4 z-10 py-20 flex flex-col justify-between flex-grow">
+        <div class="container mx-auto px-4 z-10 py-28 flex flex-col justify-between flex-grow">
             <!-- Text + Button Block -->
-            <div class="flex flex-col gap-[20px] max-w-4xl">
+            <div class="flex flex-col gap-[20px] max-w-4xl mt-12">
                 <h1 class="font-oswald text-h1-m md:text-h1 font-bold text-[#261815]">Організація агроподії під ключ по всій Україні</h1>
                 <p class="text-p-main font-roboto text-[#261815]">Облаштуємо локацію, організуємо реєстрацію гостей, харчування, технічний супровід, персонал та повний сервіс для агроподії. Ми створимо сервіс, який працює на репутацію Вашої компанії.</p>
                 
@@ -142,7 +163,7 @@
     </section>
 
     <!-- БЛОК 2: Ризики -->
-    <section class="pt-[60px] pb-[60px] bg-[#ffffff]">
+    <section id="block2" class="pt-[60px] pb-[60px] bg-[#ffffff]">
         <div class="container mx-auto px-4">
             <div class="flex flex-col items-center justify-center text-center max-w-3xl mx-auto mb-16">
                 <h2 class="font-oswald text-h2-m md:text-h2 font-bold mb-6 text-dark">Польова подія має десятки ризиків, які не видно на старті</h2>
@@ -331,7 +352,7 @@
     </section>
 
     <!-- БЛОК 6: Пакети послуг -->
-    <section class="pt-[60px] pb-[60px] bg-[#ffffff]">
+    <section id="block6" class="pt-[60px] pb-[60px] bg-[#ffffff]">
         <div class="container mx-auto px-4">
             <h2 class="font-oswald text-h2-m md:text-h2 font-bold mb-12 text-center text-[#261815]">Три формати організації Дня поля</h2>
             
@@ -416,7 +437,7 @@
     </section>
 
     <!-- БЛОК 7: Ми знаємо, як працюють агроподії -->
-    <section class="pt-[60px] pb-[60px] bg-[#ffffff]">
+    <section id="block7" class="pt-[60px] pb-[60px] bg-[#ffffff]">
         <div class="container mx-auto px-4">
             <h2 class="font-oswald text-h2-m md:text-h2 font-bold mb-12 text-center text-[#261815]">Ми знаємо, як працюють агроподії</h2>
             
@@ -482,7 +503,7 @@
     </section>
 
     <!-- БЛОК 9: Процес -->
-    <section class="pt-[60px] pb-[60px] bg-[#ffffff]">
+    <section id="block9" class="pt-[60px] pb-[60px] bg-[#ffffff]">
         <div class="container mx-auto px-4 text-center">
             <h2 class="font-oswald text-h2-m md:text-h2 font-bold mb-12 text-[#261815]">Від заявки до готової події — зрозумілий процес</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[10px] mb-12 text-left">
@@ -584,7 +605,7 @@
     </section>
 
     <!-- БЛОК 11: Слайдер -->
-    <section class="pt-[60px] pb-[60px] bg-[#ffffff]">
+    <section id="block11" class="pt-[60px] pb-[60px] bg-[#ffffff]">
         <div class="container mx-auto px-4 text-center">
             <h2 class="font-oswald text-h2-m md:text-h2 font-bold mb-12 text-dark">Події, які ми вже реалізовували для агросектору:</h2>
             
