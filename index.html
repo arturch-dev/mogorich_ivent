@@ -959,7 +959,7 @@
                 // ВСТАВ СЮДИ URL ВІД GOOGLE APPS SCRIPT !
                 const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwRObGPkw-QL4UQu2aCl--GLKn8Gx98fia6uZY_RjskFQhtV7o5sNRCctEoyzsUHfUq/exec'; 
 
-                if(GOOGLE_SCRIPT_URL === 'https://script.google.com/macros/s/AKfycbwRObGPkw-QL4UQu2aCl--GLKn8Gx98fia6uZY_RjskFQhtV7o5sNRCctEoyzsUHfUq/execF') {
+                if(GOOGLE_SCRIPT_URL === 'YOUR_GOOGLE_WEBAPP_URL') {
                     console.log('Тестові дані:', data);
                     await new Promise(r => setTimeout(r, 1000));
                 } else {
@@ -974,7 +974,7 @@
                 // FB Pixel Lead
                 if(typeof fbq !== 'undefined') fbq('track', 'Lead');
                 
-                // Показуємо повідомлення про успіх замість редиректу
+                // Перемикання видимості блоків у попапі
                 document.getElementById('formContainer').classList.add('hidden');
                 document.getElementById('successContainer').classList.remove('hidden');
                 document.getElementById('successContainer').classList.add('flex');
