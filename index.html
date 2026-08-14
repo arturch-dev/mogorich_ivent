@@ -187,40 +187,86 @@
         </div>
     </section>
 
-    <!-- БЛОК 2: Ризики -->
-    <section id="block2" class="pt-[60px] pb-[60px] bg-[#ffffff]">
+    <!-- БЛОК 2: Пакети послуг -->
+    <section id="block6" class="pt-[60px] pb-[60px] bg-[#ffffff]">
         <div class="container mx-auto px-4">
-            <div class="flex flex-col items-center justify-center text-center max-w-3xl mx-auto mb-16">
-                <h2 class="font-oswald text-h2-m md:text-h2 font-bold mb-6 text-dark">Польова подія має десятки ризиків, які не видно на старті</h2>
-                <p class="text-p-main text-[#261815]">Організувати День поля складніше, ніж звичайний корпоратив чи банкет. Часто локація знаходиться за містом, без готової інфраструктури, з обмеженим доступом до електрики, води, меблів, техніки та комфортної зони для гостей.</p>
-            </div>
+            <h2 class="font-oswald text-h2-m md:text-h2 font-bold mb-12 text-center text-[#261815]">Три формати організації Дня поля</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-[10px]">
+                <!-- Пакет 1 -->
+                <div class="bg-[#ffffff] border-2 border-[#261815] text-[#261815] rounded-2xl p-8 flex flex-col items-center justify-center text-center h-full">
+                    <h3 class="font-oswald text-h3-m font-bold mb-4 text-[#261815]">Пакет 1 — Стандарт</h3>
+                    <p class="text-p-sub text-[#261815] mb-6 flex-grow">Для невеликих агроподій, презентацій, зустрічей із партнерами або дилерами.</p>
+                    <details class="group w-full mb-8">
+                        <summary class="w-full font-bold cursor-pointer list-none flex items-center justify-between p-[10px] text-[#261815]">
+                            <span>Що може входити</span>
+                            <span class="group-open:rotate-180 transition-transform text-[#261815]">▼</span>
+                        </summary>
+                        <ul class="space-y-1 text-left">
+                            <li class="flex items-start gap-2"><img src="marker.jpg" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0" loading="lazy" decoding="async"><span class="text-p-sub text-[#261815]">welcome-coffee;</span></li>
+                            <li class="flex items-start gap-2"><img src="marker.jpg" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0" loading="lazy" decoding="async"><span class="text-p-sub text-[#261815]">фуршет або обід;</span></li>
+                            <li class="flex items-start gap-2"><img src="marker.jpg" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0" loading="lazy" decoding="async"><span class="text-p-sub text-[#261815]">базові столи та стільці;</span></li>
+                            <li class="flex items-start gap-2"><img src="marker.jpg" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0" loading="lazy" decoding="async"><span class="text-p-sub text-[#261815]">шатер 3×3;</span></li>
+                            <li class="flex items-start gap-2"><img src="marker.jpg" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0" loading="lazy" decoding="async"><span class="text-p-sub text-[#261815]">персонал для обслуговування;</span></li>
+                            <li class="flex items-start gap-2"><img src="marker.jpg" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0" loading="lazy" decoding="async"><span class="text-p-sub text-[#261815]">базове сервірування.</span></li>
+                        </ul>
+                    </details>
+                    <button onclick="openModal('Пакет Стандарт')" class="w-full bg-dark text-white hover:bg-dark80 font-bold py-4 rounded-2xl transition-colors">
+                        Прорахувати Стандартний пакет
+                    </button>
+                </div>
 
-            <!-- Image Block (Lazy Load) -->
-            <div class="w-full p-[16px] mb-8">
-                <div class="w-full h-[400px] lg:h-[600px] bg-cover bg-center bg-no-repeat rounded-[40px] shadow-xl overflow-hidden lazy-bg" data-bg="Block2.png"></div>
-            </div>
+                <!-- Пакет 2 -->
+                <div class="bg-[#ffffff] border-2 border-[#261815] text-[#261815] rounded-2xl p-8 flex flex-col items-center justify-center text-center h-full relative shadow-xl">
+                    <h3 class="font-oswald text-h3-m font-bold mb-4 text-[#261815]">Пакет 2 — Оптимальний</h3>
+                    <p class="text-p-sub text-[#261815] mb-6 flex-grow">Для повноцінного Дня поля з презентаційною частиною, харчуванням і комфортною зоною для гостей.</p>
+                    <details class="group w-full mb-8">
+                        <summary class="w-full font-bold cursor-pointer list-none flex items-center justify-between p-[10px] text-[#261815]">
+                            <span>Що може входити</span>
+                            <span class="group-open:rotate-180 transition-transform text-[#261815]">▼</span>
+                        </summary>
+                        <ul class="space-y-1 text-left">
+                            <li class="flex items-start gap-2"><img src="marker.jpg" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0" loading="lazy" decoding="async"><span class="text-p-sub text-[#261815]">welcome-coffee;</span></li>
+                            <li class="flex items-start gap-2"><img src="marker.jpg" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0" loading="lazy" decoding="async"><span class="text-p-sub text-[#261815]">банкет / фуршет;</span></li>
+                            <li class="flex items-start gap-2"><img src="marker.jpg" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0" loading="lazy" decoding="async"><span class="text-p-sub text-[#261815]">шатер або накриття;</span></li>
+                            <li class="flex items-start gap-2"><img src="marker.jpg" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0" loading="lazy" decoding="async"><span class="text-p-sub text-[#261815]">підлогове покриття;</span></li>
+                            <li class="flex items-start gap-2"><img src="marker.jpg" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0" loading="lazy" decoding="async"><span class="text-p-sub text-[#261815]">меблі;</span></li>
+                            <li class="flex items-start gap-2"><img src="marker.jpg" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0" loading="lazy" decoding="async"><span class="text-p-sub text-[#261815]">парасолі від сонця;</span></li>
+                            <li class="flex items-start gap-2"><img src="marker.jpg" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0" loading="lazy" decoding="async"><span class="text-p-sub text-[#261815]">звук / мікрофони;</span></li>
+                            <li class="flex items-start gap-2"><img src="marker.jpg" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0" loading="lazy" decoding="async"><span class="text-p-sub text-[#261815]">реєстрація гостей;</span></li>
+                            <li class="flex items-start gap-2"><img src="marker.jpg" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0" loading="lazy" decoding="async"><span class="text-p-sub text-[#261815]">персонал;</span></li>
+                            <li class="flex items-start gap-2"><img src="marker.jpg" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0" loading="lazy" decoding="async"><span class="text-p-sub text-[#261815]">базовий технічний супровід.</span></li>
+                        </ul>
+                    </details>
+                    <button onclick="openModal('Пакет Оптимальний')" class="w-full bg-dark text-white hover:bg-dark80 font-bold py-4 rounded-2xl transition-colors">
+                        Прорахувати Оптимальний пакет
+                    </button>
+                </div>
 
-            <!-- Cards Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-6 gap-[10px]">
-                <div class="md:col-span-2 bg-[#ffffff] p-6 rounded-2xl shadow-sm border-2 border-[#261815] flex flex-col items-center justify-center text-center">
-                    <h3 class="font-oswald text-h3-m font-bold text-[#261815] mb-3">Погода</h3>
-                    <p class="text-p-sub text-[#261815]">Спека, дощ, вітер, пил, відсутність тіні.</p>
-                </div>
-                <div class="md:col-span-2 bg-[#ffffff] p-6 rounded-2xl shadow-sm border-2 border-[#261815] flex flex-col items-center justify-center text-center">
-                    <h3 class="font-oswald text-h3-m font-bold text-[#261815] mb-3">Локація без інфраструктури</h3>
-                    <p class="text-p-sub text-[#261815]">Немає води, електрики, зручних зон для гостей.</p>
-                </div>
-                <div class="md:col-span-2 bg-[#ffffff] p-6 rounded-2xl shadow-sm border-2 border-[#261815] flex flex-col items-center justify-center text-center">
-                    <h3 class="font-oswald text-h3-m font-bold text-[#261815] mb-3">Багато підрядників</h3>
-                    <p class="text-p-sub text-[#261815]">Окремо шатри, окремо їжа, окремо звук, окремо меблі, окремо реєстрація.</p>
-                </div>
-                <div class="md:col-span-3 bg-[#ffffff] p-6 rounded-2xl shadow-sm border-2 border-[#261815] flex flex-col items-center justify-center text-center">
-                    <h3 class="font-oswald text-h3-m font-bold text-[#261815] mb-3">Ризик зірвати враження</h3>
-                    <p class="text-p-sub text-[#261815]">Гості можуть приїхати, але замість презентації продукту запам’ятати черги, спеку, хаос і погане харчування.</p>
-                </div>
-                <div class="md:col-span-3 bg-[#ffffff] p-6 rounded-2xl shadow-sm border-2 border-[#261815] flex flex-col items-center justify-center text-center">
-                    <h3 class="font-oswald text-h3-m font-bold text-[#261815] mb-3">Складний контроль бюджету</h3>
-                    <p class="text-p-sub text-[#261815]">Багато дрібних витрат, прихованих доплат і неузгоджених позицій.</p>
+                <!-- Пакет 3 -->
+                <div class="bg-[#261815] border-2 border-[#261815] text-[#ffffff] rounded-2xl p-8 flex flex-col items-center justify-center text-center h-full">
+                    <h3 class="font-oswald text-h3-m font-bold mb-4 text-[#ffffff]">Пакет 3 — VIP / Під ключ</h3>
+                    <p class="text-p-sub text-[#ffffff] mb-6 flex-grow">Для великих агроподій, презентацій бренду, дилерських зустрічей, запусків продуктів і масштабних Днів поля.</p>
+                    <details class="group w-full mb-8">
+                        <summary class="w-full font-bold cursor-pointer list-none flex items-center justify-between p-[10px] text-[#ffffff]">
+                            <span>Що може входити</span>
+                            <span class="group-open:rotate-180 transition-transform text-[#ffffff]">▼</span>
+                        </summary>
+                        <ul class="space-y-1 text-left">
+                            <li class="flex items-start gap-2"><img src="marker.jpg" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0" loading="lazy" decoding="async"><span class="text-p-sub text-[#ffffff]">повне облаштування локації;</span></li>
+                            <li class="flex items-start gap-2"><img src="marker.jpg" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0" loading="lazy" decoding="async"><span class="text-p-sub text-[#ffffff]">електронна реєстрація;</span></li>
+                            <li class="flex items-start gap-2"><img src="marker.jpg" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0" loading="lazy" decoding="async"><span class="text-p-sub text-[#ffffff]">сцена; світло;</span></li>
+                            <li class="flex items-start gap-2"><img src="marker.jpg" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0" loading="lazy" decoding="async"><span class="text-p-sub text-[#ffffff]">LED-екран або проєктор;</span></li>
+                            <li class="flex items-start gap-2"><img src="marker.jpg" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0" loading="lazy" decoding="async"><span class="text-p-sub text-[#ffffff]">ведучий; розважальна програма;</span></li>
+                            <li class="flex items-start gap-2"><img src="marker.jpg" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0" loading="lazy" decoding="async"><span class="text-p-sub text-[#ffffff]">фото / відео; фотозона; декор;</span></li>
+                            <li class="flex items-start gap-2"><img src="marker.jpg" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0" loading="lazy" decoding="async"><span class="text-p-sub text-[#ffffff]">біотуалети; рукомийники;</span></li>
+                            <li class="flex items-start gap-2"><img src="marker.jpg" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0" loading="lazy" decoding="async"><span class="text-p-sub text-[#ffffff]">кейтеринг; персонал;</span></li>
+                            <li class="flex items-start gap-2"><img src="marker.jpg" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0" loading="lazy" decoding="async"><span class="text-p-sub text-[#ffffff]">повний технічний супровід.</span></li>
+                        </ul>
+                    </details>
+                    <button onclick="openModal('Пакет VIP')" class="w-full bg-[#F2C364] text-[#261815] hover:bg-[#e0b252] font-bold py-4 rounded-2xl transition-colors">
+                        Отримати VIP-прорахунок
+                    </button>
                 </div>
             </div>
         </div>
@@ -376,86 +422,40 @@
         </div>
     </section>
 
-    <!-- БЛОК 6: Пакети послуг -->
-    <section id="block6" class="pt-[60px] pb-[60px] bg-[#ffffff]">
+    <!-- БЛОК 6: Ризики -->
+    <section id="block2" class="pt-[60px] pb-[60px] bg-[#ffffff]">
         <div class="container mx-auto px-4">
-            <h2 class="font-oswald text-h2-m md:text-h2 font-bold mb-12 text-center text-[#261815]">Три формати організації Дня поля</h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-[10px]">
-                <!-- Пакет 1 -->
-                <div class="bg-[#ffffff] border-2 border-[#261815] text-[#261815] rounded-2xl p-8 flex flex-col items-center justify-center text-center h-full">
-                    <h3 class="font-oswald text-h3-m font-bold mb-4 text-[#261815]">Пакет 1 — Стандарт</h3>
-                    <p class="text-p-sub text-[#261815] mb-6 flex-grow">Для невеликих агроподій, презентацій, зустрічей із партнерами або дилерами.</p>
-                    <details class="group w-full mb-8">
-                        <summary class="w-full font-bold cursor-pointer list-none flex items-center justify-between p-[10px] text-[#261815]">
-                            <span>Що може входити</span>
-                            <span class="group-open:rotate-180 transition-transform text-[#261815]">▼</span>
-                        </summary>
-                        <ul class="space-y-1 text-left">
-                            <li class="flex items-start gap-2"><img src="marker.jpg" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0" loading="lazy" decoding="async"><span class="text-p-sub text-[#261815]">welcome-coffee;</span></li>
-                            <li class="flex items-start gap-2"><img src="marker.jpg" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0" loading="lazy" decoding="async"><span class="text-p-sub text-[#261815]">фуршет або обід;</span></li>
-                            <li class="flex items-start gap-2"><img src="marker.jpg" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0" loading="lazy" decoding="async"><span class="text-p-sub text-[#261815]">базові столи та стільці;</span></li>
-                            <li class="flex items-start gap-2"><img src="marker.jpg" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0" loading="lazy" decoding="async"><span class="text-p-sub text-[#261815]">шатер 3×3;</span></li>
-                            <li class="flex items-start gap-2"><img src="marker.jpg" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0" loading="lazy" decoding="async"><span class="text-p-sub text-[#261815]">персонал для обслуговування;</span></li>
-                            <li class="flex items-start gap-2"><img src="marker.jpg" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0" loading="lazy" decoding="async"><span class="text-p-sub text-[#261815]">базове сервірування.</span></li>
-                        </ul>
-                    </details>
-                    <button onclick="openModal('Пакет Стандарт')" class="w-full bg-dark text-white hover:bg-dark80 font-bold py-4 rounded-2xl transition-colors">
-                        Прорахувати Стандартний пакет
-                    </button>
-                </div>
+            <div class="flex flex-col items-center justify-center text-center max-w-3xl mx-auto mb-16">
+                <h2 class="font-oswald text-h2-m md:text-h2 font-bold mb-6 text-dark">Польова подія має десятки ризиків, які не видно на старті</h2>
+                <p class="text-p-main text-[#261815]">Організувати День поля складніше, ніж звичайний корпоратив чи банкет. Часто локація знаходиться за містом, без готової інфраструктури, з обмеженим доступом до електрики, води, меблів, техніки та комфортної зони для гостей.</p>
+            </div>
 
-                <!-- Пакет 2 -->
-                <div class="bg-[#ffffff] border-2 border-[#261815] text-[#261815] rounded-2xl p-8 flex flex-col items-center justify-center text-center h-full relative shadow-xl">
-                    <h3 class="font-oswald text-h3-m font-bold mb-4 text-[#261815]">Пакет 2 — Оптимальний</h3>
-                    <p class="text-p-sub text-[#261815] mb-6 flex-grow">Для повноцінного Дня поля з презентаційною частиною, харчуванням і комфортною зоною для гостей.</p>
-                    <details class="group w-full mb-8">
-                        <summary class="w-full font-bold cursor-pointer list-none flex items-center justify-between p-[10px] text-[#261815]">
-                            <span>Що може входити</span>
-                            <span class="group-open:rotate-180 transition-transform text-[#261815]">▼</span>
-                        </summary>
-                        <ul class="space-y-1 text-left">
-                            <li class="flex items-start gap-2"><img src="marker.jpg" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0" loading="lazy" decoding="async"><span class="text-p-sub text-[#261815]">welcome-coffee;</span></li>
-                            <li class="flex items-start gap-2"><img src="marker.jpg" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0" loading="lazy" decoding="async"><span class="text-p-sub text-[#261815]">банкет / фуршет;</span></li>
-                            <li class="flex items-start gap-2"><img src="marker.jpg" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0" loading="lazy" decoding="async"><span class="text-p-sub text-[#261815]">шатер або накриття;</span></li>
-                            <li class="flex items-start gap-2"><img src="marker.jpg" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0" loading="lazy" decoding="async"><span class="text-p-sub text-[#261815]">підлогове покриття;</span></li>
-                            <li class="flex items-start gap-2"><img src="marker.jpg" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0" loading="lazy" decoding="async"><span class="text-p-sub text-[#261815]">меблі;</span></li>
-                            <li class="flex items-start gap-2"><img src="marker.jpg" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0" loading="lazy" decoding="async"><span class="text-p-sub text-[#261815]">парасолі від сонця;</span></li>
-                            <li class="flex items-start gap-2"><img src="marker.jpg" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0" loading="lazy" decoding="async"><span class="text-p-sub text-[#261815]">звук / мікрофони;</span></li>
-                            <li class="flex items-start gap-2"><img src="marker.jpg" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0" loading="lazy" decoding="async"><span class="text-p-sub text-[#261815]">реєстрація гостей;</span></li>
-                            <li class="flex items-start gap-2"><img src="marker.jpg" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0" loading="lazy" decoding="async"><span class="text-p-sub text-[#261815]">персонал;</span></li>
-                            <li class="flex items-start gap-2"><img src="marker.jpg" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0" loading="lazy" decoding="async"><span class="text-p-sub text-[#261815]">базовий технічний супровід.</span></li>
-                        </ul>
-                    </details>
-                    <button onclick="openModal('Пакет Оптимальний')" class="w-full bg-dark text-white hover:bg-dark80 font-bold py-4 rounded-2xl transition-colors">
-                        Прорахувати Оптимальний пакет
-                    </button>
-                </div>
+            <!-- Image Block (Lazy Load) -->
+            <div class="w-full p-[16px] mb-8">
+                <div class="w-full h-[400px] lg:h-[600px] bg-cover bg-center bg-no-repeat rounded-[40px] shadow-xl overflow-hidden lazy-bg" data-bg="Block2.png"></div>
+            </div>
 
-                <!-- Пакет 3 -->
-                <div class="bg-[#261815] border-2 border-[#261815] text-[#ffffff] rounded-2xl p-8 flex flex-col items-center justify-center text-center h-full">
-                    <h3 class="font-oswald text-h3-m font-bold mb-4 text-[#ffffff]">Пакет 3 — VIP / Під ключ</h3>
-                    <p class="text-p-sub text-[#ffffff] mb-6 flex-grow">Для великих агроподій, презентацій бренду, дилерських зустрічей, запусків продуктів і масштабних Днів поля.</p>
-                    <details class="group w-full mb-8">
-                        <summary class="w-full font-bold cursor-pointer list-none flex items-center justify-between p-[10px] text-[#ffffff]">
-                            <span>Що може входити</span>
-                            <span class="group-open:rotate-180 transition-transform text-[#ffffff]">▼</span>
-                        </summary>
-                        <ul class="space-y-1 text-left">
-                            <li class="flex items-start gap-2"><img src="marker.jpg" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0" loading="lazy" decoding="async"><span class="text-p-sub text-[#ffffff]">повне облаштування локації;</span></li>
-                            <li class="flex items-start gap-2"><img src="marker.jpg" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0" loading="lazy" decoding="async"><span class="text-p-sub text-[#ffffff]">електронна реєстрація;</span></li>
-                            <li class="flex items-start gap-2"><img src="marker.jpg" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0" loading="lazy" decoding="async"><span class="text-p-sub text-[#ffffff]">сцена; світло;</span></li>
-                            <li class="flex items-start gap-2"><img src="marker.jpg" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0" loading="lazy" decoding="async"><span class="text-p-sub text-[#ffffff]">LED-екран або проєктор;</span></li>
-                            <li class="flex items-start gap-2"><img src="marker.jpg" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0" loading="lazy" decoding="async"><span class="text-p-sub text-[#ffffff]">ведучий; розважальна програма;</span></li>
-                            <li class="flex items-start gap-2"><img src="marker.jpg" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0" loading="lazy" decoding="async"><span class="text-p-sub text-[#ffffff]">фото / відео; фотозона; декор;</span></li>
-                            <li class="flex items-start gap-2"><img src="marker.jpg" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0" loading="lazy" decoding="async"><span class="text-p-sub text-[#ffffff]">біотуалети; рукомийники;</span></li>
-                            <li class="flex items-start gap-2"><img src="marker.jpg" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0" loading="lazy" decoding="async"><span class="text-p-sub text-[#ffffff]">кейтеринг; персонал;</span></li>
-                            <li class="flex items-start gap-2"><img src="marker.jpg" alt="" class="w-[8px] h-[8px] mt-[8px] flex-shrink-0" loading="lazy" decoding="async"><span class="text-p-sub text-[#ffffff]">повний технічний супровід.</span></li>
-                        </ul>
-                    </details>
-                    <button onclick="openModal('Пакет VIP')" class="w-full bg-[#F2C364] text-[#261815] hover:bg-[#e0b252] font-bold py-4 rounded-2xl transition-colors">
-                        Отримати VIP-прорахунок
-                    </button>
+            <!-- Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-6 gap-[10px]">
+                <div class="md:col-span-2 bg-[#ffffff] p-6 rounded-2xl shadow-sm border-2 border-[#261815] flex flex-col items-center justify-center text-center">
+                    <h3 class="font-oswald text-h3-m font-bold text-[#261815] mb-3">Погода</h3>
+                    <p class="text-p-sub text-[#261815]">Спека, дощ, вітер, пил, відсутність тіні.</p>
+                </div>
+                <div class="md:col-span-2 bg-[#ffffff] p-6 rounded-2xl shadow-sm border-2 border-[#261815] flex flex-col items-center justify-center text-center">
+                    <h3 class="font-oswald text-h3-m font-bold text-[#261815] mb-3">Локація без інфраструктури</h3>
+                    <p class="text-p-sub text-[#261815]">Немає води, електрики, зручних зон для гостей.</p>
+                </div>
+                <div class="md:col-span-2 bg-[#ffffff] p-6 rounded-2xl shadow-sm border-2 border-[#261815] flex flex-col items-center justify-center text-center">
+                    <h3 class="font-oswald text-h3-m font-bold text-[#261815] mb-3">Багато підрядників</h3>
+                    <p class="text-p-sub text-[#261815]">Окремо шатри, окремо їжа, окремо звук, окремо меблі, окремо реєстрація.</p>
+                </div>
+                <div class="md:col-span-3 bg-[#ffffff] p-6 rounded-2xl shadow-sm border-2 border-[#261815] flex flex-col items-center justify-center text-center">
+                    <h3 class="font-oswald text-h3-m font-bold text-[#261815] mb-3">Ризик зірвати враження</h3>
+                    <p class="text-p-sub text-[#261815]">Гості можуть приїхати, але замість презентації продукту запам’ятати черги, спеку, хаос і погане харчування.</p>
+                </div>
+                <div class="md:col-span-3 bg-[#ffffff] p-6 rounded-2xl shadow-sm border-2 border-[#261815] flex flex-col items-center justify-center text-center">
+                    <h3 class="font-oswald text-h3-m font-bold text-[#261815] mb-3">Складний контроль бюджету</h3>
+                    <p class="text-p-sub text-[#261815]">Багато дрібних витрат, прихованих доплат і неузгоджених позицій.</p>
                 </div>
             </div>
         </div>
@@ -728,14 +728,27 @@
         <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-8">
             <div class="text-center md:text-left">
                 <p class="font-oswald text-h3-m text-accent mb-2">Наші контакти</p>
-                <a href="tel:+380681316063" class="block text-[20px] font-bold hover:text-accent transition">+38 068 131 60 63 (Юлія)</a>
-                <a href="mailto:mogorich_yuliia@ukr.net" class="block text-gray-400 hover:text-white transition">mogorich_yuliia@ukr.net</a>
+                <div class="flex flex-col gap-3 md:items-start items-center">
+                    <a href="tel:+380681316063" class="flex items-center gap-2 text-[20px] font-bold text-[#FFFFFF] hover:text-accent transition">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 0 0-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 1.01-.63 1.01-1.18v-3.45c0-.54-.45-.99-.99-.99z"/></svg>
+                        +38 068 131 60 63 (Юлія)
+                    </a>
+                    <a href="mailto:mogorich_yuliia@ukr.net" class="flex items-center gap-2 text-[#FFFFFF] hover:text-accent transition">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                        mogorich_yuliia@ukr.net
+                    </a>
+                    <a href="https://t.me/aaarturr" target="_blank" class="flex items-center gap-2 text-[#FFFFFF] hover:text-accent transition">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+                        Написати в Telegram
+                    </a>
+                </div>
             </div>
             
             <div class="text-center">
                 <p class="text-gray-400 mb-4">Соціальні мережі</p>
                 <!-- Соціальна кнопка -->
-                <a href="https://instagram.com/mogorich_ivent" target="_blank" class="inline-block bg-white/10 hover:bg-accent hover:text-dark px-8 py-4 rounded-xl transition-colors font-bold uppercase tracking-wider">
+                <a href="https://instagram.com/mogorich_ivent" target="_blank" class="inline-flex items-center justify-center gap-3 bg-white/10 hover:bg-accent hover:text-dark px-8 py-4 rounded-xl transition-colors font-bold uppercase tracking-wider">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M7.75 2C4.58 2 2 4.58 2 7.75v8.5c0 3.17 2.58 5.75 5.75 5.75h8.5c3.17 0 5.75-2.58 5.75-5.75v-8.5C22 4.58 19.42 2 16.25 2h-8.5zm0 1.5h8.5c2.35 0 4.25 1.9 4.25 4.25v8.5c0 2.35-1.9 4.25-4.25 4.25h-8.5c-2.35 0-4.25-1.9-4.25-4.25v-8.5C3.5 5.4 5.4 3.5 7.75 3.5zM12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zm0 1.5c1.93 0 3.5 1.57 3.5 3.5S13.93 15.5 12 15.5 8.5 13.93 8.5 12 10.07 8.5 12 8.5zm5.25-2.75c-.41 0-.75.34-.75.75s.34.75.75.75.75-.34.75-.75-.34-.75-.75-.75z"/></svg>
                     Instagram (mogorich_ivent)
                 </a>
             </div>
@@ -743,6 +756,9 @@
             <div class="text-center md:text-right max-w-xs">
                 <p class="text-gray-400 mb-2">Адреса</p>
                 <p class="font-roboto text-p-sub">Чернігівська область, Ніжинський район, с. Вертіївка, вул. Київська, будинок 1</p>
+                <a href="https://maps.app.goo.gl/TbUUJGmRFdgUiz8V8" target="_blank" rel="noopener noreferrer" class="inline-block mt-4">
+                    <img src="map.jpg" alt="Карта" style="width: 250px; height: 200px; border-radius: 40px; object-fit: cover;">
+                </a>
             </div>
         </div>
         
